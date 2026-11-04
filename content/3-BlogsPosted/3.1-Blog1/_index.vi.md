@@ -19,6 +19,10 @@ Trong quá trình vận hành hệ thống, các doanh nghiệp thường nhận
 
 3.1.2 Giải pháp của Arctic Wolf
 
+![Kiến trúc hệ thống Arctic Wolf Aurora Agentic SOC](/images/blog1/arctic-wolf-architecture.png)
+
+*Hình 3.1: Kiến trúc hệ thống Arctic Wolf Aurora Agentic SOC trên AWS.*
+
 Arctic Wolf phát triển Aurora Agentic SOC, sử dụng AI Agent kết hợp với chuyên gia bảo mật để tự động hóa quá trình xử lý cảnh báo.
 
 Hệ thống hoạt động thông qua một quy trình:
