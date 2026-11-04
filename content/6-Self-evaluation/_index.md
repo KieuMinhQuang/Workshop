@@ -7,9 +7,8 @@ pre: " <b> 6. </b> "
 ---
 
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
-
+During my internship at **Amazon Web Services Vietnam Co., Ltd.** from August 8, 2026, to November 15, 2026, I had the opportunity to learn, develop, and apply the knowledge I had acquired within a real-world professional environment. I actively contributed ideas and collaborated with team members to implement various functions as planned; through this process, I progressively enhanced my professional expertise and teamwork skills, while gaining hands-on experience with Amazon Web Services applications and services.
+ 
 In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
 
 To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
@@ -31,7 +30,12 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 ### Needs Improvement
 
-* Improve the level of transfer, improve knowledge about the program, improve self-learning ability  
-* Improvement in problem-solving thinking  
-* Learn how to communicate better in everyday communication and at work, handling situations
-* Learn how to work in a more effective team, think and be more creative
+* Professional knowledge: It is necessary to strengthen foundational knowledge and improve the ability to apply what has been learned to real-world situations.
+
+* Learning agility and proactiveness: One should be more proactive in exploring new technologies, researching documentation, and proposing solutions when encountering challenges.
+
+* Communication skills: It is important to improve the ability to present ideas, discuss work-related matters, and report progress in a concise and clear manner.
+
+* Problem-solving mindset: One should develop the ability to analyze problems, identify root causes, and select appropriate solutions, rather than relying heavily on guidance from others.
+
+* Growth mindset: It is essential to be open to feedback, regularly self-evaluate performance, and create plans to address and improve upon existing limitations.

@@ -24,5 +24,4 @@ Ngoài kiến thức chuyên môn, kỳ thực tập giúp mình làm quen với
 **5. Văn hóa & tinh thần đồng đội**  
 Tinh thần làm việc của team gắn kết và chuyên nghiệp. Dù là thực tập sinh nhưng ý kiến đóng góp của mình vẫn được lắng nghe. Trong những giai đoạn dự án cần đẩy nhanh tiến độ, mọi người phối hợp nhịp nhàng và hỗ trợ nhau rất tốt để hoàn thành mục tiêu chung.
 
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Chính sách hỗ trợ thực tập sinh của công ty rõ ràng. Việc team tạo điều kiện linh hoạt thời gian giúp mình dễ dàng cân bằng giữa lịch làm việc và lịch học.
+

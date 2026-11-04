@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 
-Trong suốt thời gian thực tập tại **[Công ty TNHH Amazon Web Services Viet Nam] **08/08/2026 đến 12/11/2026 , tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế. Em đã tích cực tham gia đóng góp ý tưởng, phối hợp cùng các thành viên thực hiện các chức năng theo kế hoạch, qua đó từng bước nâng cao kỹ năng chuyên môn, kỹ năng làm việc nhóm và tiếp cận các ứng dụng dịch vụ của Amazon Web Services.  
+Trong suốt thời gian thực tập tại **[Công ty TNHH Amazon Web Services Viet Nam] **08/08/2026 đến 15/11/2026 , tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế. Em đã tích cực tham gia đóng góp ý tưởng, phối hợp cùng các thành viên thực hiện các chức năng theo kế hoạch, qua đó từng bước nâng cao kỹ năng chuyên môn, kỹ năng làm việc nhóm và tiếp cận các ứng dụng dịch vụ của Amazon Web Services.  
  
 
 Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
@@ -32,7 +32,12 @@ Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân t
 
 ### Cần cải thiện
 
-* Nâng cao trình độ chuyển môn, trao dồi thêm kiến thức về chương trình, cải thiện khả năng tự học
-* Cải thiện trong cách tư duy giải quyết vấn đề
-* Học cách giao tiếp tốt hơn trong giao tiếp hằng ngày và trong công việc, xử lý tình huống
-* Học cách làm việc nhóm hiệu quả hơn, tư duy và sáng tạo nhiều hơn
+* Kiến thức chuyên môn: Cần củng cố kiến thức nền tảng và nâng cao khả năng vận dụng kiến thức đã học vào các tình huống thực tế.
+
+* Khả năng học hỏi và chủ động: Cần chủ động hơn trong việc tìm hiểu công nghệ mới, nghiên cứu tài liệu và đề xuất hướng giải quyết khi gặp khó khăn.
+
+* Kỹ năng giao tiếp: Cần cải thiện khả năng trình bày ý tưởng, trao đổi công việc và báo cáo tiến độ một cách ngắn gọn, rõ ràng.
+
+* Tư duy giải quyết vấn đề: Cần rèn luyện khả năng phân tích vấn đề, xác định nguyên nhân và lựa chọn giải pháp phù hợp thay vì phụ thuộc nhiều vào sự hướng dẫn.
+
+* Tính cầu tiến: Cần thường xuyên tiếp nhận góp ý, tự đánh giá kết quả và xây dựng kế hoạch cải thiện những điểm còn hạn chế.

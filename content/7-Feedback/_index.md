@@ -24,6 +24,5 @@ In addition to professional knowledge, the internship helped me get familiar wit
 **5. Company Culture & Team Spirit**  
 The team’s working spirit is cohesive and professional. Even as an intern, my opinions and contributions are still listened to.
 
-**6. Internship Policies / Benefits**  
-The company’s support policy for interns is clear. The team’s flexibility with working hours makes it easy to balance work and study.
+
 
