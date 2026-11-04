@@ -5,40 +5,24 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
 
 ### Đánh giá chung
 
 **1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Môi trường làm việc cởi mở và dễ hòa nhập. Các anh chị trong team FCAJ hỗ trợ khá nhiệt tình khi mình gặp vướng mắc về luồng công việc hay kỹ thuật. Không gian làm việc chuyên nghiệp giúp mình dễ tập trung hoàn thành task.
 
 **2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Mentor bám sát tiến độ và định hướng công việc rõ ràng. Khi có vấn đề, mentor thường gợi ý hướng giải quyết để mình tự tìm hiểu và thực hành thay vì chỉ đưa sẵn đáp án, điều này giúp mình hiểu sâu và nhớ lâu hơn.
 
 **3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+Các công việc được giao bám sát với kiến thức mình đang học trên trường. Mình có cơ hội áp dụng trực tiếp lý thuyết vào các bài toán thực tế của dự án, đồng thời được tiếp cận thêm với các công nghệ và dịch vụ thực tiễn mà môi trường đại học ít đi sâu.
 
 **4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Ngoài kiến thức chuyên môn, kỳ thực tập giúp mình làm quen với quy trình làm việc chuẩn trong một dự án công nghệ: từ cách sử dụng công cụ quản lý, làm việc nhóm, đến cách báo cáo tiến độ. Những chia sẻ từ mentor cũng giúp mình hình dung thực tế hơn về lộ trình công việc sau khi ra trường.
 
 **5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Tinh thần làm việc của team gắn kết và chuyên nghiệp. Dù là thực tập sinh nhưng ý kiến đóng góp của mình vẫn được lắng nghe. Trong những giai đoạn dự án cần đẩy nhanh tiến độ, mọi người phối hợp nhịp nhàng và hỗ trợ nhau rất tốt để hoàn thành mục tiêu chung.
 
 **6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
-
-
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
-
-
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+Chính sách hỗ trợ thực tập sinh của công ty rõ ràng. Việc team tạo điều kiện linh hoạt thời gian giúp mình dễ dàng cân bằng giữa lịch làm việc và lịch học.
