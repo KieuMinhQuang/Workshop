@@ -10,11 +10,11 @@ chapter: false
 
 
 ### Student Information:
-&emsp; **Full Name:** Do Manh Long
+&emsp; **Full Name:** Kieu Minh Quang
 
-&emsp; **Phone Number:** 0333886093
+&emsp; **Phone Number:** 0969724205
 
-&emsp; **Email:** adyuaa951@gmail.com
+&emsp; **Email:** emlaquangne@gmail.com
 
 &emsp; **University:** Vietnam National University of Agriculture
 
@@ -28,7 +28,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 8/08/2026 to 15/11/2026
 
-![Your profile picture](/images/long.png)
+![Your profile picture](/images/quang.png)
 
 ### Report Content
 

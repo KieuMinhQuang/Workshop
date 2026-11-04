@@ -7,11 +7,11 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Đỗ Mạnh Long
+&emsp; **Họ và tên:** Kiều Minh Quang
 
-&emsp; **Số điện thoại:** 0333886093
+&emsp; **Số điện thoại:** 0969724205
 
-&emsp; **Email:** adyuaa951@gmail.com
+&emsp; **Email:** emlaquangne@gmail.com
 
 &emsp; **Trường:** Học viện Nông Nghiệp Việt Nam
 
@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 8/08/2026 đến ngày 15/11/2026
 
-![Ảnh đại diện của bạn](/images/long.png)
+![Ảnh đại diện của bạn](/images/quang.png)
 
 
 
