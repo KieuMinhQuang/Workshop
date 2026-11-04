@@ -6,23 +6,54 @@ chapter: false
 pre: " <b> 3.3. </b> "
 ---
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# BLOG 3: TÍCH HỢP QUY TRÌNH MUA SẮM VỚI AWS MARKETPLACE THÔNG QUA CÁC API
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### Xây dựng hệ thống mua sắm phần mềm tự động bằng AWS Marketplace APIs và kiến trúc Serverless
 
-Các điểm chính cần nắm:
+Chào mọi người, hôm nay mình muốn chia sẻ một giải pháp khá thú vị của AWS về việc tích hợp quy trình mua sắm phần mềm vào các hệ thống doanh nghiệp. Thông qua AWS Marketplace APIs, doanh nghiệp có thể tìm kiếm sản phẩm, quản lý hợp đồng, đăng ký dịch vụ và theo dõi chi phí ngay trên nền tảng nội bộ mà không cần thường xuyên truy cập AWS Management Console.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+#### 3.3.1 Bài toán gặp phải
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Trong các doanh nghiệp lớn, quá trình tìm kiếm, lựa chọn và quản lý phần mềm thường liên quan đến nhiều phòng ban như IT, tài chính và bộ phận mua sắm.
 
-...Hình ảnh...
+Nếu mọi thao tác đều phải thực hiện thủ công trên AWS Management Console, người dùng sẽ mất nhiều thời gian để tìm kiếm sản phẩm, so sánh giá, quản lý hợp đồng và tổng hợp báo cáo chi phí.
 
-...Link...
+Vì vậy, doanh nghiệp cần một giải pháp giúp tích hợp các hoạt động mua sắm này vào hệ thống làm việc hiện có.
 
-...Hướng dẫn...
+#### 3.3.2 Giải pháp của AWS
+
+![Kiến trúc hệ thống MP-Buyer Portal trên AWS](/images/blog3/mp-buyer-portal-architecture.png)
+
+*Hình 3.3: Kiến trúc Serverless của hệ thống MP-Buyer Portal tích hợp AWS Marketplace APIs.*
+
+AWS giới thiệu mô hình MP-Buyer Portal, một ứng dụng tham chiếu Serverless giúp tích hợp các chức năng của AWS Marketplace vào một giao diện web riêng.
+
+Giải pháp sử dụng các thành phần chính:
+
+- **AWS Marketplace Discovery API:** Hỗ trợ tìm kiếm sản phẩm, lọc và so sánh các lựa chọn phần mềm.
+- **AWS Marketplace Agreement API:** Quản lý hợp đồng, thông tin giá và quy trình đăng ký sản phẩm.
+- **Amazon CloudFront và Amazon S3:** Phân phối và lưu trữ giao diện web.
+- **Amazon API Gateway và AWS Lambda:** Tiếp nhận yêu cầu và xử lý các nghiệp vụ mua sắm.
+- **Amazon DynamoDB:** Lưu trữ và đồng bộ dữ liệu hợp đồng để hỗ trợ truy xuất báo cáo nhanh hơn.
+- **Amazon Cognito:** Xác thực người dùng và bảo vệ quyền truy cập hệ thống.
+- **Amazon EventBridge:** Tự động kích hoạt quá trình đồng bộ dữ liệu định kỳ 6 giờ một lần.
+
+Ngoài ra, hệ thống có thể kết hợp Strands Agents và Amazon Bedrock để phân tích dữ liệu, tạo báo cáo và đưa ra các đề xuất tối ưu chi phí.
+
+#### 3.3.3 Lợi ích và bảo mật
+
+Điểm nổi bật của giải pháp là khả năng tích hợp quy trình mua sắm vào hệ thống nội bộ, giúp người dùng tìm kiếm sản phẩm, quản lý đăng ký và theo dõi chi phí thuận tiện hơn.
+
+Bên cạnh đó, kiến trúc Serverless giúp giảm công việc quản lý hạ tầng và tối ưu chi phí khi hệ thống không hoạt động.
+
+Về bảo mật, giải pháp sử dụng Amazon Cognito để xác thực người dùng, HTTPS thông qua CloudFront, S3 Private Bucket và IAM Least Privilege để giới hạn quyền truy cập. AWS cũng khuyến nghị kết hợp AWS WAF, giới hạn CORS và thiết lập cảnh báo CloudWatch khi triển khai thực tế.
+
+#### 3.3.4 Đánh giá cá nhân & Kết luận
+
+Theo mình, đây là một giải pháp hữu ích cho các doanh nghiệp muốn tự động hóa quy trình mua sắm và quản lý phần mềm. Việc sử dụng AWS Marketplace APIs giúp giảm các thao tác thủ công, đồng thời cho phép tích hợp chức năng mua sắm vào những hệ thống mà doanh nghiệp đang sử dụng.
+
+Qua bài viết, mình hiểu thêm về cách kết hợp Amazon CloudFront, API Gateway, Lambda, DynamoDB và Cognito để xây dựng một ứng dụng Serverless hoàn chỉnh. Đây cũng là cơ hội để tìm hiểu sâu hơn về việc tích hợp API, quản lý dữ liệu và bảo mật trong kiến trúc điện toán đám mây.
+
+*Tác giả: Kiều Minh Quang*
+
+**Nguồn tham khảo:** [AWS – How you can embed procurement into your workflows with AWS Marketplace APIs](https://aws.amazon.com/vi/blogs/awsmarketplace/how-you-can-embed-procurement-into-your-workflows-with-aws-marketplace-apis/)

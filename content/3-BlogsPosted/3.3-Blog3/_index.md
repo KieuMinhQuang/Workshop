@@ -7,23 +7,53 @@ pre: " <b> 3.3. </b> "
 ---
 
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# BLOG 3: INTEGRATING PROCUREMENT WORKFLOWS WITH AWS MARKETPLACE VIA APIS
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### Building an Automated Software Procurement System Using AWS Marketplace APIs and Serverless Architecture
 
-Key points to know:
+Hello everyone! Today, I’d like to share an interesting AWS solution for integrating software procurement workflows into enterprise systems. By leveraging AWS Marketplace APIs, organizations can search for products, manage agreements, subscribe to services, and track costs directly from their own internal platforms—eliminating the need to constantly access the AWS Management Console.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+#### 3.3.1 The Challenge
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+In large enterprises, the process of searching for, selecting, and managing software typically involves multiple departments, such as IT, Finance, and Procurement.
 
-...Image...
+If every task must be performed manually within the AWS Management Console, users end up spending significant time searching for products, comparing prices, managing contracts, and consolidating cost reports.
 
-...Link...
+Consequently, enterprises require a solution that integrates these procurement activities into their existing operational workflows.
 
-...Guide...
+#### 3.3.2 The AWS Solution
+
+![MP-Buyer Portal architecture on AWS](/images/blog3/mp-buyer-portal-architecture.png)
+
+*Figure 3.3: Serverless architecture of the MP-Buyer Portal integrated with AWS Marketplace APIs.*
+
+AWS offers the "MP-Buyer Portal"—a serverless reference application designed to integrate AWS Marketplace functionalities into a custom web interface.
+
+The solution utilizes the following key components:
+
+- **AWS Marketplace Discovery API:** Facilitates product searches, filtering, and the comparison of software options.
+- **AWS Marketplace Agreement API:** Manages contracts, pricing information, and product subscription workflows.
+- **Amazon CloudFront and Amazon S3:** Handle the distribution and hosting of the web interface.
+- **Amazon API Gateway and AWS Lambda:** Manage incoming requests and process procurement-related operations. - **Amazon DynamoDB:** Stores and synchronizes contract data to facilitate faster report retrieval.
+- **Amazon Cognito:** Handles user authentication and secures system access.
+- **Amazon EventBridge:** Automatically triggers the data synchronization process every 6 hours.
+
+Additionally, the system can incorporate Strands Agents and Amazon Bedrock to analyze data, generate reports, and provide cost-optimization recommendations.
+
+#### 3.3.3 Benefits and Security
+
+A key highlight of this solution is its ability to integrate procurement processes into internal systems, making it more convenient for users to search for products, manage subscriptions, and track expenses.
+
+Furthermore, the serverless architecture reduces the need for infrastructure management and optimizes costs during periods of system inactivity.
+
+Regarding security, the solution utilizes Amazon Cognito for user authentication, HTTPS via CloudFront, private S3 buckets, and the principle of least privilege (via IAM) to restrict access. For actual deployments, it is also recommended to incorporate AWS WAF, implement CORS restrictions, and configure CloudWatch alerts.
+
+#### 3.3.4 Personal Assessment & Conclusion
+
+In my view, this is a highly useful solution for businesses looking to automate procurement and software management processes. Leveraging AWS Marketplace APIs minimizes manual tasks and enables the integration of purchasing functionality directly into the systems a business already uses.
+
+Through this article, I have gained a better understanding of how to combine Amazon CloudFront, API Gateway, Lambda, DynamoDB, and Cognito to build a complete serverless application. It has also provided an opportunity to delve deeper into API integration, data management, and security within a cloud computing architecture.
+
+*Author: Kieu Minh Quang*
+
+**References:** [AWS – How You Can Embed Procurement into Your Workflows with AWS Marketplace APIs](https://aws.amazon.com/vi/blogs/awsmarketplace/how-you-can-embed-procurement-into-your-workflows-with-aws-marketplace-apis/)
