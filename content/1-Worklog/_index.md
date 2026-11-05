@@ -7,28 +7,28 @@ pre: " <b> 1. </b> "
 ---
 
 
-This worklog summarizes my 12-week internship from August 8 to November 7, 2026. It records the AWS knowledge, hands-on activities, community events, group-project progress, and reporting work completed during the program.
+This worklog summarizes my 12-week internship, spanning from August 8 to November 14, 2026. It documents the AWS knowledge I acquired, hands-on exercises, community events, the progress of my group project, and the finalization of my internship report throughout the program. Typically, and as a standard practice, a worklog spans approximately 3 months (the duration of an internship), with the following weekly content:
 
-**Week 1:** [Attend the kick-off meeting](1.1-week1/)
+**Week 1:** [Participating in the kick-off session](1.1-week1/)
 
-**Week 2:** [Set up an AWS account and learn about identity management and access authorization using IAM.](1.2-week2/)
+**Week 2:** [Learning and practicing how to manage and optimize AWS usage costs using AWS Budgets.](1.2-week2/)
 
-**Week 3:** [Researching and practicing the construction of secure virtual network architectures using Amazon VPC.](1.3-week3/)
+**Week 3:** [Exploring AWS Support Plans and practicing the creation and management of support requests via the AWS Support Center.](1.3-week3/)
 
-**Week 4:** [Deploy Amazon EC2 instances, manage storage, and connect to Amazon RDS databases.](1.4-week4/)
+**Week 4:** [Learning and practicing how to grant applications access to AWS services using IAM Roles on Amazon EC2.](1.4-week4/)
 
-**Week 5:** [Research solutions for load balancing and automatic resource scaling using Load Balancing and Auto Scaling.](1.5-week5/)
+**Week 5:** [Deploying the FCAJ Management application using Auto Scaling Groups, Application Load Balancers, and methods for the automated scaling of AWS resources.](1.5-week5/)
 
-**Week 6:** [Explore Serverless architecture and build data-processing functions using AWS Lambda.](1.6-week6/)
+**Week 6:** [Learning and practicing centralized identity management and access control using AWS IAM Identity Center.](1.6-week6/)
 
-**Week 7:** [Explore methods for managing, monitoring, and optimizing AWS usage costs using AWS Budgets.](1.7-week7/)
+**Week 7:** [Exploring and implementing data backup and recovery solutions on AWS using AWS Backup.](1.7-week7/)
 
-**Week 8:** [Deploy a static website on Amazon S3, optimize content delivery using CloudFront, and secure it with AWS WAF.](1.8-week8/)
+**Week 8:** [Practicing application deployment using Docker, Docker Compose, Amazon EC2, and Amazon ECR.](1.8-week8/)
 
-**Week 9:** [Research solutions for performance monitoring, log management, and system alerting using Amazon CloudWatch.](1.9-week9/)
+**Week 9:** [Researching AWS cost-optimization solutions, including Savings Plans, Reserved Instances, and Reserved DB Instances.](1.9-week9/)
 
-**Week 10:** [Learn about and practice building automated application integration and deployment pipelines using AWS CI/CD.](1.10-week10/)
+**Week 10:** [Learning and practicing the construction of CI/CD pipelines, including automated building and deployment of applications using AWS CodeCommit, CodeBuild, CodePipeline, and CodeDeploy.](1.10-week10/)
 
-**Week 11:** [Testing and debugging.](1.11-week11/)
+**Week 11:** [Testing and] fixing errors](1.11-week11/)
 
-**Week 12:** [Complete the report](1.12-week12/)
+**Week 12:** [Finalizing the report](1.12-week12/)

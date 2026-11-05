@@ -14,23 +14,23 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 1:** [Tham gia buổi kick-off](1.1-week1/)
 
-**Tuần 2:** [Thiết lập tài khoản AWS, tìm hiểu quản lý danh tính và phân quyền truy cập bằng IAM.](1.2-week2/)
+**Tuần 2:** [Tìm hiểu và thực hành quản lý, tối ưu chi phí sử dụng AWS bằng AWS Budgets.](1.2-week2/)
 
-**Tuần 3:** [Nghiên cứu và thực hành xây dựng kiến trúc mạng ảo an toàn với Amazon VPC.](1.3-week3/)
+**Tuần 3:** [Tìm hiểu các gói hỗ trợ AWS Support Plans và thực hành tạo, quản lý yêu cầu hỗ trợ trên AWS Support Center.](1.3-week3/)
 
-**Tuần 4:** [Triển khai máy chủ Amazon EC2, quản lý lưu trữ và kết nối cơ sở dữ liệu Amazon RDS.](1.4-week4/)
+**Tuần 4:** [Tìm hiểu và thực hành cấp quyền cho ứng dụng truy cập các dịch vụ AWS thông qua IAM Role trên Amazon EC2.](1.4-week4/)
 
-**Tuần 5:** [Nghiên cứu giải pháp cân bằng tải và tự động mở rộng tài nguyên với Load Balancing và Auto Scaling.](1.5-week5/)
+**Tuần 5:** [Triển khai ứng dụng FCAJ Management với Auto Scaling Group, Application Load Balancer và các phương pháp tự động mở rộng tài nguyên AWS.](1.5-week5/)
 
-**Tuần 6:** [Tìm hiểu kiến trúc Serverless và xây dựng các chức năng xử lý dữ liệu bằng AWS Lambda.](1.6-week6/)
+**Tuần 6:** [Tìm hiểu và thực hành quản lý danh tính, phân quyền truy cập tập trung bằng AWS IAM Identity Center.](1.6-week6/)
 
-**Tuần 7:** [ Nghiên cứu phương pháp quản lý, giám sát và tối ưu hóa chi phí sử dụng AWS với AWS Budgets.](1.7-week7/)
+**Tuần 7:** [Tìm hiểu và triển khai giải pháp sao lưu, khôi phục dữ liệu trên AWS bằng AWS Backup.](1.7-week7/)
 
-**Tuần 8:** [Triển khai website tĩnh trên Amazon S3, tối ưu phân phối nội dung bằng CloudFront và bảo mật với AWS WAF.](1.8-week8/)
+**Tuần 8:** [Thực hành triển khai ứng dụng bằng Docker, Docker Compose, Amazon EC2 và Amazon ECR.](1.8-week8/)
 
-**Tuần 9:** [Nghiên cứu giải pháp giám sát hiệu suất, quản lý nhật ký và cảnh báo hệ thống bằng Amazon CloudWatch.](1.9-week9/)
+**Tuần 9:** [Nghiên cứu các giải pháp tối ưu chi phí AWS với Savings Plans, Reserved Instances và Reserved DB Instances.](1.9-week9/)
 
-**Tuần 10:** [Tìm hiểu và thực hành xây dựng quy trình tích hợp, triển khai ứng dụng tự động với AWS CI/CD.](1.10-week10/)
+**Tuần 10:** [Tìm hiểu và thực hành xây dựng quy trình CI/CD, tự động build và triển khai ứng dụng bằng AWS CodeCommit, CodeBuild, CodePipeline và CodeDeploy.](1.10-week10/)
 
 **Tuần 11:** [Kiểm thử và khắc phục lỗi](1.11-week11/)
 
