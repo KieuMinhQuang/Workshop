@@ -9,20 +9,23 @@ pre: " <b> 1.3. </b> "
 
 ### Mục tiêu tuần 3:
 
-* Tìm hiểu các thành phần mạng trong Amazon VPC.
-* Thực hành xây dựng và bảo mật hệ thống mạng trên AWS.
+* Tìm hiểu các gói hỗ trợ AWS (AWS Support Plans) và quyền lợi của từng gói.
+* Tìm hiểu cách sử dụng AWS Support Center và các loại yêu cầu hỗ trợ.
+* Nắm được quy trình tạo, quản lý Support Request và lựa chọn mức độ nghiêm trọng của sự cố (Severity Level).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | Tìm hiểu Amazon VPC, Subnet, Route Table và Internet Gateway.| 17/08/2026   | 17/08/2026      |<https://cloudjourney.awsfcaj.com/> |
-| 3   | Tạo VPC, Public Subnet và Private Subnet.| 18/08/2026   | 18/08/2026     | <https://cloudjourney.awsfcaj.com/> |
-| 4   | Cấu hình Internet Gateway, Route Table và Security Group.| 19/08/2026   | 19/08/2026      | <https://cloudjourney.awsfcaj.com/> |
-| 5   | Khởi tạo EC2 trong VPC, cấu hình NAT Gateway và kiểm tra kết nối.| 20/08/2026   | 20/08/2026      | <https://cloudjourney.awsfcaj.com/> |
-| 6   | Tìm hiểu Site-to-Site VPN, thực hành kết nối và tổng kết.| 21/08/2026   | 21/08/2026      | <https://cloudjourney.awsfcaj.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | Tìm hiểu tổng quan AWS Support và các gói hỗ trợ Basic, Business Support+, Enterprise Support và Unified Operations. | 17/08/2026 | 17/08/2026 | <https://000009.awsfcaj.com/> |
+| 3 | Tìm hiểu AWS Support Center và các loại yêu cầu hỗ trợ: Account and Billing Support, Service Limit Increase và Technical Support. | 18/08/2026 | 18/08/2026 | <https://000009.awsfcaj.com/> |
+| 4 | Tìm hiểu quy trình thay đổi AWS Support Plan, các bước nâng cấp gói hỗ trợ và những lưu ý về chi phí. | 19/08/2026 | 19/08/2026 | <https://000009.awsfcaj.com/> |
+| 5 | Tìm hiểu và thực hành quy trình tạo Support Request, cung cấp thông tin sự cố và quản lý yêu cầu hỗ trợ trên AWS Support Center. | 20/08/2026 | 20/08/2026 | <https://000009.awsfcaj.com/> |
+| 6 | Tìm hiểu các mức độ nghiêm trọng của sự cố (Severity Level), thời gian phản hồi và cách lựa chọn mức độ hỗ trợ phù hợp. | 21/08/2026 | 21/08/2026 | <https://000009.awsfcaj.com/> |
 
 ### Kết quả đạt được tuần 3:
 
-* Hiểu được kiến trúc mạng trên AWS và thực hành xây dựng hệ thống VPC với các thành phần mạng cơ bản.
-* Biết cách cấu hình định tuyến và kiểm soát lưu lượng truy cập nhằm đảm bảo khả năng kết nối và bảo mật hệ thống.
+* Hiểu được chức năng và phân biệt được các gói hỗ trợ AWS.
+* Nắm được các loại yêu cầu hỗ trợ và cách sử dụng AWS Support Center.
+* Hiểu quy trình thay đổi Support Plan và các lưu ý về chi phí.
+* Nắm được quy trình tạo, quản lý Support Request và lựa chọn Severity Level phù hợp với từng tình huống sự cố.

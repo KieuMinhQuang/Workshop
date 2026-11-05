@@ -9,20 +9,26 @@ pre: " <b> 1.8. </b> "
 
 ### Week 8 Objectives:
 
-* Learn how to distribute content using Amazon CloudFront.
-* Thực hành cấu hình AWS WAF để bảo vệ ứng dụng web.
+* Learn about Docker and the process of deploying applications in a containerized environment, integrated with AWS services.
+* Practice containerizing and deploying frontend and backend applications using Docker—both locally and on Amazon EC2.
+* Explore and gain hands-on experience with Amazon RDS for database management, as well as Amazon ECR and Docker Hub for storing and managing Docker images.
+* Use Docker Compose to manage and deploy multiple containers, and verify application functionality within an AWS environment.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | Create an Amazon S3 Bucket and upload a sample HTML website.| 28/09/2026 | 28/09/2026      |
-| 3   | Test website access and configure S3 access permissions.| 29/09/2026 | 29/09/2026      | <https://cloudjourney.awsfcaj.com/> |
-| 4   | Create a CloudFront Distribution and configure Amazon S3 as the Origin.| 30/09/2026 | 30/09/2026      | <https://cloudjourney.awsfcaj.com/> |
-| 5   | Create an AWS WAF Web ACL and configure Managed Rules.| 01/10/2026 | 01/10/2026      | <https://cloudjourney.awsfcaj.com/> |
-| 6   | Create Custom Rules, test security configurations, and review request logs.| 02/10/2026 | 02/10/2026      | <https://cloudjourney.awsfcaj.com/> |
+### Tasks for this week:
 
+| Day | Task | Start Date | Completion Date | Resources |
+| --- | --- | --- | --- | --- |
+| Mon | Gain an overview of Docker and containerized application deployment architecture; install Node.js, MySQL, and Git; practice deploying and testing frontend and backend applications in a local environment. | 21/09/2026 | 21/09/2026 | <https://000015.awsfcaj.com/> |
+| Tue | Prepare AWS infrastructure by configuring VPCs, subnets, and security groups; create an IAM role for ECR; set up a DB subnet group and deploy an Amazon RDS database. | 22/09/2026 | 22/09/2026 | <https://000015.awsfcaj.com/> |
+| Wed | Provision an Ubuntu EC2 instance, connect via SSH, and install Docker and Docker Compose; configure the connection to the RDS database and prepare test data. | 23/09/2026 | 23/09/2026 | <https://000015.awsfcaj.com/> |
+| Thu | Learn and practice packaging and deploying frontend and backend applications using Docker images on EC2; use Docker Compose to manage multiple containers and verify application functionality. | 24/09/2026 | 24/09/2026 | <https://000015.awsfcaj.com/> |
+| 6 | Practice creating repositories on Amazon ECR and Docker Hub; use the AWS CLI to authenticate and push Docker images to these storage platforms; verify the results and clean up resources following the workshop. | 25/09/2026 | 25/09/2026 | <https://000015.awsfcaj.com/> |
 
-### Week 8 Achievements:
+### Achievements for Week 8:
 
-* Practice hosting a static website on Amazon S3 and using CloudFront to improve content delivery speed.
-* Understand how AWS WAF protects web applications by controlling and filtering access requests.
+* Understood the operating principles of Docker and containers, as well as the process for deploying frontend and backend applications in a local environment.
+* Gained hands-on experience in configuring AWS infrastructure, including VPCs, security groups, IAM roles, EC2 instances, and Amazon RDS.
+* Learned how to install and configure Docker on EC2 and connect applications to an RDS database.
+* Practiced packaging and deploying applications using Docker images and managing multiple containers via Docker Compose.
+* Learned and practiced using Amazon ECR and Docker Hub to store, manage, and share Docker images.
+* Mastered the process of verifying application functionality and cleaning up AWS resources upon completion of the workshop.
