@@ -19,7 +19,7 @@ This can lead to delays in detecting and addressing threats, thereby increasing 
 
 3.1.2 The Arctic Wolf Solution
 
-![Arctic Wolf Aurora Agentic SOC Architecture](/images/blog1/arctic-wolf-architecture.png)
+![Arctic Wolf Aurora Agentic SOC Architecture](/Workshop/images/blog1/arctic-wolf-architecture.png)
 
 *Figure 3.1: Architecture of Arctic Wolf Aurora Agentic SOC on AWS.*
 

@@ -19,7 +19,7 @@ Trong quá trình vận hành hệ thống, các doanh nghiệp thường nhận
 
 3.1.2 Giải pháp của Arctic Wolf
 
-![Kiến trúc hệ thống Arctic Wolf Aurora Agentic SOC](/images/blog1/arctic-wolf-architecture.png)
+![Kiến trúc hệ thống Arctic Wolf Aurora Agentic SOC](/Workshop/images/Blog1/arctic-wolf-architecture.png)
 
 *Hình 3.1: Kiến trúc hệ thống Arctic Wolf Aurora Agentic SOC trên AWS.*
 

@@ -23,7 +23,7 @@ Consequently, enterprises require a solution that integrates these procurement a
 
 #### 3.3.2 The AWS Solution
 
-![MP-Buyer Portal architecture on AWS](/images/blog3/mp-buyer-portal-architecture.png)
+![MP-Buyer Portal architecture on AWS](/Workshop/images/blog3/mp-buyer-portal-architecture.png)
 
 *Figure 3.3: Serverless architecture of the MP-Buyer Portal integrated with AWS Marketplace APIs.*
 
