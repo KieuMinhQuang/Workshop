@@ -7,100 +7,127 @@ pre: " <b> 2. </b> "
 ---
 
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
+# Xây dựng ứng dụng web bán điện thoại trên nền tảng điện toán đám mây AWS
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+### 1. Tóm tắt điều hành
 
-### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+Dự án hướng đến xây dựng và triển khai một ứng dụng web bán điện thoại trên nền tảng AWS, phục vụ hai nhóm người dùng chính: khách hàng và quản trị viên. Khách hàng có thể xem sản phẩm, tìm kiếm điện thoại, đăng ký, đăng nhập và đặt hàng. Quản trị viên có thể quản lý sản phẩm, hình ảnh, đơn hàng và người dùng trong phạm vi chức năng của ứng dụng.
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+Ứng dụng sử dụng ReactJS để xây dựng giao diện, Java Spring Boot để xử lý nghiệp vụ và MySQL để lưu trữ dữ liệu. Hệ thống được triển khai trên AWS với Amazon S3 và Amazon CloudFront phục vụ giao diện và hình ảnh, Amazon EC2 chạy máy chủ ứng dụng, Amazon RDS quản lý cơ sở dữ liệu, Amazon Cognito xác thực người dùng và Amazon CloudWatch giám sát hoạt động. Amazon VPC và AWS IAM hỗ trợ cấu hình mạng và phân quyền truy cập.
 
-*Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+Mục tiêu là hoàn thành một hệ thống bán điện thoại có thể truy cập và kiểm thử trực tuyến, đồng thời thực hành quy trình triển khai một ứng dụng web nhiều thành phần trên AWS.
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+### 2. Tuyên bố vấn đề
 
-### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+**Vấn đề hiện tại**
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+Một ứng dụng bán điện thoại cần quản lý tập trung thông tin sản phẩm, tài khoản và đơn hàng. Khi chỉ chạy ứng dụng trên máy cá nhân, nhóm khó kiểm thử việc truy cập từ Internet, kết nối giữa các thành phần và vận hành hệ thống trong môi trường triển khai thực tế.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+**Giải pháp đề xuất**
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+Nhóm xây dựng ứng dụng theo mô hình giao diện, máy chủ xử lý nghiệp vụ và cơ sở dữ liệu. ReactJS cung cấp giao diện cho khách hàng và quản trị viên; Spring Boot cung cấp các giao diện lập trình để xử lý nghiệp vụ; MySQL lưu trữ dữ liệu. Các thành phần được triển khai trên AWS và kết nối thông qua cấu hình mạng, phân quyền phù hợp.
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+Việc sử dụng Amazon Cognito giúp triển khai chức năng đăng ký, đăng nhập và xác thực người dùng. Amazon CloudWatch được sử dụng để theo dõi trạng thái máy chủ và nhật ký hoạt động.
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+### 3. Kiến trúc giải pháp
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+Hệ thống được thiết kế với các thành phần chính như sau: người dùng truy cập ứng dụng qua Amazon CloudFront; giao diện ReactJS và hình ảnh sản phẩm được lưu trên Amazon S3; các yêu cầu nghiệp vụ được chuyển đến ứng dụng Spring Boot trên Amazon EC2; ứng dụng kết nối đến cơ sở dữ liệu MySQL trên Amazon RDS. Amazon Cognito thực hiện xác thực người dùng, còn Amazon CloudWatch hỗ trợ giám sát.
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+![AWS architecture diagram](/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+**Các dịch vụ AWS sử dụng**
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+| Dịch vụ | Vai trò |
+|---|---|
+| Amazon VPC | Tạo môi trường mạng cho máy chủ ứng dụng và cơ sở dữ liệu. |
+| AWS IAM | Quản lý quyền truy cập tài nguyên AWS. |
+| Amazon EC2 | Chạy ứng dụng Java Spring Boot và các giao diện lập trình. |
+| Amazon RDS | Lưu trữ và quản lý cơ sở dữ liệu MySQL. |
+| Amazon S3 | Lưu trữ giao diện ReactJS sau khi biên dịch và hình ảnh sản phẩm. |
+| Amazon CloudFront | Phân phối giao diện, hình ảnh và chuyển tiếp yêu cầu đến máy chủ ứng dụng. |
+| Amazon Cognito | Đăng ký, đăng nhập và xác thực người dùng bằng mã xác thực JWT. |
+| Amazon CloudWatch | Thu thập chỉ số, nhật ký và hỗ trợ theo dõi hệ thống. |
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+**Thiết kế thành phần**
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+- **Giao diện:** Hai giao diện khách hàng và quản trị viên được phát triển bằng ReactJS, HTML, CSS, JavaScript và Bootstrap; bản biên dịch được lưu trong S3 và phân phối qua CloudFront.
+- **Máy chủ ứng dụng:** Spring Boot chạy trên một EC2 trong mạng con công khai, tiếp nhận các yêu cầu tại đường dẫn `/api/*` qua CloudFront và xử lý nghiệp vụ.
+- **Cơ sở dữ liệu:** RDS MySQL được đặt trong mạng con riêng tư, chỉ cho phép máy chủ ứng dụng kết nối. Cấu hình cơ sở dữ liệu sử dụng một vùng sẵn sàng để phù hợp phạm vi thực hành.
+- **Hình ảnh sản phẩm:** Hình ảnh được lưu trên S3 và phân phối qua CloudFront; máy chủ ứng dụng được cấp quyền phù hợp để quản lý tệp.
+- **Xác thực và giám sát:** Cognito cấp mã xác thực cho người dùng; Spring Boot kiểm tra mã khi xử lý các yêu cầu được bảo vệ. CloudWatch theo dõi chỉ số EC2 và nhật ký ứng dụng.
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
+### 4. Triển khai kỹ thuật
 
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+**Các giai đoạn triển khai**
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+1. Phân tích yêu cầu của ứng dụng bán điện thoại; xác định chức năng khách hàng, quản trị viên và luồng dữ liệu.
+2. Thiết kế giao diện ReactJS, mô hình dữ liệu MySQL và các giao diện lập trình Spring Boot.
+3. Cấu hình môi trường AWS gồm IAM, VPC, nhóm bảo mật, EC2, RDS, S3, CloudFront, Cognito và CloudWatch.
+4. Triển khai giao diện lên S3 và CloudFront; triển khai Spring Boot lên EC2; kết nối RDS và tích hợp Cognito.
+5. Kiểm thử truy cập trang web, xác thực, quản lý sản phẩm, đặt hàng, kết nối cơ sở dữ liệu và kiểm tra nhật ký hệ thống.
+
+**Phân chia công việc**
+
+| Thành viên | Nội dung phụ trách |
+|---|---|
+| Mai Văn Tường | Thiết kế giao diện, phát triển ReactJS cho khách hàng và quản trị viên, tích hợp giao diện lập trình, phân tích và thiết kế hệ thống. |
+| Hoàng Thanh Tài | Cấu hình IAM, VPC, EC2, RDS, S3, CloudFront; triển khai hệ thống và giám sát bằng CloudWatch. |
+| Kiều Minh Quang | Thiết kế sơ đồ dữ liệu, quản lý MySQL, chuẩn bị dữ liệu và kiểm thử giao diện lập trình bằng Postman. |
+| Đỗ Mạnh Long | Phát triển Spring Boot, JPA, Repository, Service, Controller và các giao diện lập trình. |
+| Dương Quang Huy | Triển khai Amazon Cognito, đăng ký, đăng nhập, xác thực JWT và phân quyền người dùng. |
+
+### 5. Lộ trình và mốc triển khai
+
+- **Mốc 1 – Phân tích và thiết kế:** Hoàn thành yêu cầu chức năng, thiết kế giao diện, sơ đồ cơ sở dữ liệu và kiến trúc AWS.
+- **Mốc 2 – Phát triển ứng dụng:** Hoàn thành các giao diện ReactJS, chức năng Spring Boot, cơ sở dữ liệu MySQL và tích hợp xác thực.
+- **Mốc 3 – Chuẩn bị hạ tầng AWS:** Cấu hình mạng, phân quyền, máy chủ, cơ sở dữ liệu và lưu trữ.
+- **Mốc 4 – Triển khai và tích hợp:** Đưa giao diện, máy chủ ứng dụng và cơ sở dữ liệu lên AWS; kết nối các thành phần.
+- **Mốc 5 – Kiểm thử và hoàn thiện:** Kiểm thử chức năng, xác thực, kết nối dữ liệu; kiểm tra nhật ký, chỉ số và hoàn thiện tài liệu workshop.
+
+### 6. Ước tính ngân sách
+
+**Chi phí hạ tầng AWS dự kiến trong 1 tháng**
+
+| Dịch vụ / Tài nguyên | Chi phí (USD/tháng) |
+|---|---:|
+| Amazon EC2 và ổ đĩa EBS | 21,19 |
+| Amazon RDS MySQL và dung lượng lưu trữ | 21,01 |
+| Amazon S3 | 0,18 |
+| Amazon CloudFront | 0,00 |
+| Amazon Cognito | 0,00 |
+| Amazon CloudWatch | 0,00 |
+| Địa chỉ IPv4 công khai | 3,65 |
+| AWS IAM và Amazon VPC | 0,00 |
+| **Tổng chi phí dự kiến** | **46,03 USD/tháng** |
+
+### 7. Đánh giá rủi ro
+
+**Ma trận rủi ro**
+
+| Rủi ro | Mức độ ảnh hưởng | Khả năng xảy ra |
+|---|---|---|
+| Lỗi cấu hình mạng hoặc quyền truy cập khiến các thành phần không kết nối được | Cao | Trung bình |
+| Máy chủ hoặc cơ sở dữ liệu gián đoạn trong khi kiểm thử | Trung bình | Trung bình |
+| Sai sót trong xác thực và phân quyền người dùng | Cao | Trung bình |
+| Chi phí thực tế vượt dự toán hoặc credit không còn đủ | Trung bình | Trung bình |
+
+**Biện pháp giảm thiểu**
+
+- Kiểm tra quy tắc mạng và quyền truy cập theo từng bước; chỉ cho phép EC2 kết nối vào RDS.
+- Kiểm thử chức năng và kết nối sau mỗi giai đoạn triển khai; theo dõi nhật ký và chỉ số qua CloudWatch.
+- Kiểm tra mã xác thực JWT và quyền truy cập tương ứng với khách hàng, quản trị viên.
+- Theo dõi chi phí bằng bảng quản lý chi phí AWS và xóa tài nguyên không còn sử dụng.
+
+**Phương án dự phòng**
+
+- Khi một dịch vụ gặp lỗi, kiểm tra nhật ký, cấu hình và khởi động lại thành phần liên quan khi cần thiết.
+- Duy trì mã nguồn và tệp sao lưu dữ liệu cần thiết để khôi phục môi trường thực hành.
+
+### 8. Kết quả kỳ vọng
+
+- Hoàn thành ứng dụng web bán điện thoại có giao diện cho khách hàng và quản trị viên.
+- Triển khai thành công ReactJS trên S3 và CloudFront, Spring Boot trên EC2 và MySQL trên RDS.
+- Tích hợp Cognito để đăng ký, đăng nhập, xác thực và phân quyền.
+- Kiểm thử được luồng xem sản phẩm, quản lý sản phẩm, đặt hàng và lưu trữ dữ liệu.
+- Theo dõi được trạng thái máy chủ và nhật ký thông qua CloudWatch.
+- Hoàn thiện hướng dẫn workshop có sơ đồ kiến trúc, các bước triển khai, hình ảnh kiểm thử và quy trình dọn dẹp tài nguyên.
