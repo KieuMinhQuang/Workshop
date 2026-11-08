@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 8/08/2026 đến ngày 15/11/2026
 
-![Ảnh đại diện của bạn](/images/quang.png)
+![Ảnh đại diện của bạn](/Workshop/images/quang.png)
 
 
 

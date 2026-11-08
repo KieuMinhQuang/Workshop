@@ -28,7 +28,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 8/08/2026 to 15/11/2026
 
-![Your profile picture](/images/quang.png)
+![Your profile picture](/Workshop/images/quang.png)
 
 ### Report Content
 
