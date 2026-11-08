@@ -33,7 +33,7 @@ Amazon Cognito will support user registration, sign-in, and authentication. Amaz
 
 The architecture comprises the following primary components: users access the application through Amazon CloudFront; the ReactJS frontend and product images are stored in Amazon S3; business requests are routed to the Spring Boot application running on Amazon EC2; and the application connects to a MySQL database hosted on Amazon RDS. Amazon Cognito provides user authentication, while Amazon CloudWatch provides monitoring.
 
-![AWS architecture diagram](/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
+![AWS architecture diagram](/Workshop/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
 
 **AWS services used**
 

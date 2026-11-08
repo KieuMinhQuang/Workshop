@@ -33,7 +33,7 @@ Việc sử dụng Amazon Cognito giúp triển khai chức năng đăng ký, đ
 
 Hệ thống được thiết kế với các thành phần chính như sau: người dùng truy cập ứng dụng qua Amazon CloudFront; giao diện ReactJS và hình ảnh sản phẩm được lưu trên Amazon S3; các yêu cầu nghiệp vụ được chuyển đến ứng dụng Spring Boot trên Amazon EC2; ứng dụng kết nối đến cơ sở dữ liệu MySQL trên Amazon RDS. Amazon Cognito thực hiện xác thực người dùng, còn Amazon CloudWatch hỗ trợ giám sát.
 
-![AWS architecture diagram](/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
+![Sơ đồ kiến ​​trúc AWS](/Workshop/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
 
 **Các dịch vụ AWS sử dụng**
 
