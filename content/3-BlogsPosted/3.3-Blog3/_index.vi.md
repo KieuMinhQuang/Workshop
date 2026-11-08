@@ -22,7 +22,7 @@ Vì vậy, doanh nghiệp cần một giải pháp giúp tích hợp các hoạt
 
 #### 3.3.2 Giải pháp của AWS
 
-![Kiến trúc hệ thống MP-Buyer Portal trên AWS](/Workshop/images/blog3/mp-buyer-portal-architecture.png)
+![Kiến trúc hệ thống MP-Buyer Portal trên AWS](/Workshop/images/Blog3/mp-buyer-portal-architecture.png)
 
 *Hình 3.3: Kiến trúc Serverless của hệ thống MP-Buyer Portal tích hợp AWS Marketplace APIs.*
 

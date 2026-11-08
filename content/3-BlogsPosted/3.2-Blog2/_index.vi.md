@@ -21,7 +21,7 @@ Tuy nhiên, việc tự xây dựng hệ thống đo lường (Metering) đòi h
 
 #### 3.2.2 Giải pháp của AWS
 
-![Kiến trúc hệ thống đo lường SaaS trên AWS Marketplace](/Workshop/images/blog2/saas-metering-architecture.png)
+![Kiến trúc hệ thống đo lường SaaS trên AWS Marketplace](/Workshop/images/Blog2/saas-metering-architecture.png)
 
 *Hình 3.2: Kiến trúc hệ thống đo lường mức sử dụng SaaS trên AWS Marketplace.*
 

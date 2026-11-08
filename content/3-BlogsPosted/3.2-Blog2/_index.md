@@ -21,7 +21,7 @@ However, building a custom metering system from scratch involves handling numero
 
 #### 3.2.2 The AWS Solution
 
-![SaaS Metering System Architecture on AWS Marketplace](/Workshop/images/blog2/saas-metering-architecture.png)
+![SaaS Metering System Architecture on AWS Marketplace](/Workshop/images/Blog2/saas-metering-architecture.png)
 
 *Figure 3.2: Architecture of the SaaS usage metering system on AWS Marketplace.*
 
