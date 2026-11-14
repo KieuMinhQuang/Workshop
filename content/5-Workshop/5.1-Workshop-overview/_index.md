@@ -34,7 +34,7 @@ By the end of this workshop, participants should be able to:
 
 ### 2. System Architecture
 
-![AWS architecture diagram](/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
+![AWS architecture diagram](/Workshop/images/2-Proposal/SoDoKienTrucAWS.drawio.png?v=2)
 
 **AWS Services and Their Roles**
 

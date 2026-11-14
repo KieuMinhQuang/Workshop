@@ -34,7 +34,7 @@ Sau khi hoàn thành workshop, người thực hành có thể:
 
 ### 2. Kiến trúc hệ thống
 
-![AWS architecture diagram](/images/2-Proposal/SoDoKienTrucAWS.drawio.png)
+![AWS architecture diagram](/Workshop/images/2-Proposal/SoDoKienTrucAWS.drawio.png?v=2)
 
 **Vai trò của các dịch vụ AWS**
 
