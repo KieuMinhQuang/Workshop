@@ -1,0 +1,571 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content><meta name=author content="emlaquangne@gmail.com"><link rel=icon href=/Workshop/images/favicon.png type=image/png><title>Deploy Backend Spring Boot with CI/CD :: Internship Report</title>
+<link href=/Workshop/css/nucleus.css?1794679186 rel=stylesheet><link href=/Workshop/css/fontawesome-all.min.css?1794679186 rel=stylesheet><link href=/Workshop/css/hybrid.css?1794679186 rel=stylesheet><link href=/Workshop/css/featherlight.min.css?1794679186 rel=stylesheet><link href=/Workshop/css/perfect-scrollbar.min.css?1794679186 rel=stylesheet><link href=/Workshop/css/auto-complete.css?1794679186 rel=stylesheet><link href=/Workshop/css/atom-one-dark-reasonable.css?1794679186 rel=stylesheet><link href=/Workshop/css/theme.css?1794679186 rel=stylesheet><link href=/Workshop/css/hugo-theme.css?1794679186 rel=stylesheet><link href=/Workshop/css/theme-workshop.css?1794679186 rel=stylesheet><script src=/Workshop/js/jquery-3.3.1.min.js?1794679186></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.3-backend/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=/Workshop/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/Workshop/js/lunr.min.js?1794679186></script><script type=text/javascript src=/Workshop/js/auto-complete.js?1794679186></script><script type=text/javascript>var baseurl="https://kieuminhquang.github.io/Workshop/"</script><script type=text/javascript src=/Workshop/js/search.js?1794679186></script></div><div class=highlightable><ul class=topics><li data-nav-id=/Workshop/1-worklog/ title=Worklog class=dd-item><a href=/Workshop/1-worklog/><b>1. </b>Worklog
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/1-worklog/1.1-week1/ title="Week 1 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.1-week1/><b>1.1. </b>Week 1 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.2-week2/ title="Week 2 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.2-week2/><b>1.2. </b>Week 2 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.3-week3/ title="Week 3 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.3-week3/><b>1.3. </b>Week 3 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.4-week4/ title="Week 4 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.4-week4/><b>1.4. </b>Week 4 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.5-week5/ title="Week 5 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.5-week5/><b>1.5. </b>Week 5 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.6-week6/ title="Week 6 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.6-week6/><b>1.6. </b>Week 6 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.7-week7/ title="Week 7 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.7-week7/><b>1.7. </b>Week 7 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.8-week8/ title="Week 8 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.8-week8/><b>1.8. </b>Week 8 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.9-week9/ title="Week 9 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.9-week9/><b>1.9. </b>Week 9 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.10-week10/ title="Week 10 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.10-week10/><b>1.10. </b>Week 10 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.11-week11/ title="Week 11 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.11-week11/><b>1.11. </b>Week 11 Worklog
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/1-worklog/1.12-week12/ title="Week 12 Worklog" class=dd-item><a href=/Workshop/1-worklog/1.12-week12/><b>1.12. </b>Week 12 Worklog
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/2-proposal/ title=Proposal class=dd-item><a href=/Workshop/2-proposal/><b>2. </b>Proposal
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/3-blogsposted/ title="Blogs Posted" class=dd-item><a href=/Workshop/3-blogsposted/><b>3. </b>Blogs Posted
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/3-blogsposted/3.1-blog1/ title="Blog 1" class=dd-item><a href=/Workshop/3-blogsposted/3.1-blog1/><b>3.1. </b>Blog 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/3-blogsposted/3.2-blog2/ title="Blog 2" class=dd-item><a href=/Workshop/3-blogsposted/3.2-blog2/><b>3.2. </b>Blog 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/3-blogsposted/3.3-blog3/ title="Blog 3" class=dd-item><a href=/Workshop/3-blogsposted/3.3-blog3/><b>3.3. </b>Blog 3
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/4-eventparticipated/ title="Events Participated" class=dd-item><a href=/Workshop/4-eventparticipated/><b>4. </b>Events Participated
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=/Workshop/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/4-eventparticipated/4.2-event2/ title="Event 2" class=dd-item><a href=/Workshop/4-eventparticipated/4.2-event2/><b>4.2. </b>Event 2
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/ title=Workshop class="dd-item
+parent"><a href=/Workshop/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.1-workshop-overview/ title=Introduction class=dd-item><a href=/Workshop/5-workshop/5.1-workshop-overview/><b>5.1. </b>Introduction
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.2-prerequiste/ title=Prerequiste class=dd-item><a href=/Workshop/5-workshop/5.2-prerequiste/><b>5.2. </b>Prerequiste
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.3-iam-vpc/ title="Access S3 from VPC" class=dd-item><a href=/Workshop/5-workshop/5.3-iam-vpc/><b>5.3. </b>Access S3 from VPC
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.3-iam-vpc/5.3.1-vpc/ title="Create a gateway endpoint" class=dd-item><a href=/Workshop/5-workshop/5.3-iam-vpc/5.3.1-vpc/><b>5.3.1 </b>Create a gateway endpoint
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.3-iam-vpc/5.3.2-security-iam/ title="Test the Gateway Endpoint" class=dd-item><a href=/Workshop/5-workshop/5.3-iam-vpc/5.3.2-security-iam/><b>5.3.2 </b>Test the Gateway Endpoint
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/5.4-rds/ title="Access S3 from on-premises" class=dd-item><a href=/Workshop/5-workshop/5.4-rds/><b>5.4. </b>Access S3 from on-premises
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.4-rds/5.4.1-database/ title="Prepare the environment" class=dd-item><a href=/Workshop/5-workshop/5.4-rds/5.4.1-database/><b>5.4.1 </b>Prepare the environment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.4-rds/5.4.2-import/ title="Create an S3 Interface endpoint" class=dd-item><a href=/Workshop/5-workshop/5.4-rds/5.4.2-import/><b>5.4.2 </b>Create an S3 Interface endpoint
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/5.5-ec2-backend/ title="VPC Endpoint Policies" class=dd-item><a href=/Workshop/5-workshop/5.5-ec2-backend/><b>5.5. </b>VPC Endpoint Policies
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.5-ec2-backend/5.5.1-instance/ title="Launch EC2, Install Dependencies and Initialize RDS" class=dd-item><a href=/Workshop/5-workshop/5.5-ec2-backend/5.5.1-instance/><b>5.5.1.</b> Launch EC2, Install Dependencies and Initialize RDS
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.5-ec2-backend/5.5.2-cognito-bootstrap/ title="Create Cognito User Pool" class=dd-item><a href=/Workshop/5-workshop/5.5-ec2-backend/5.5.2-cognito-bootstrap/><b>5.5.2.</b> Create Cognito User Pool
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.5-ec2-backend/5.5.3-backend/ title="Run Spring Boot on EC2" class=dd-item><a href=/Workshop/5-workshop/5.5-ec2-backend/5.5.3-backend/><b>5.5.3.</b> Run Spring Boot on EC2
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/5.6-s3/ title="Clean up" class=dd-item><a href=/Workshop/5-workshop/5.6-s3/><b>5.6. </b>Clean up
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.6-s3/5.6.1-buckets/ title="Create Two Amazon S3 Buckets" class=dd-item><a href=/Workshop/5-workshop/5.6-s3/5.6.1-buckets/><b>5.6.1.</b> Create Two Amazon S3 Buckets
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.6-s3/5.6.2-images/ title="Prepare and upload product images to S3" class=dd-item><a href=/Workshop/5-workshop/5.6-s3/5.6.2-images/><b>5.6.2.</b> Prepare and upload product images to S3
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/5.7-cloudfront-cognito/ title="CloudFront and Cognito Integration" class=dd-item><a href=/Workshop/5-workshop/5.7-cloudfront-cognito/><b>5.7.</b> CloudFront and Cognito Integration
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.7-cloudfront-cognito/5.7.1-cloudfront/ title="Configure CloudFront Origins, HTTPS and Behaviors" class=dd-item><a href=/Workshop/5-workshop/5.7-cloudfront-cognito/5.7.1-cloudfront/><b>5.7.1.</b> Configure CloudFront Origins, HTTPS and Behaviors
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.7-cloudfront-cognito/5.7.2-cognito-login/ title="Configure Amazon Cognito Login for CloudFront" class=dd-item><a href=/Workshop/5-workshop/5.7-cloudfront-cognito/5.7.2-cognito-login/><b>5.7.2.</b> Configure Amazon Cognito Login for CloudFront
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.7-cloudfront-cognito/5.7.3-integration/ title="Integrate and deploy Frontend, Backend, Cognito" class=dd-item><a href=/Workshop/5-workshop/5.7-cloudfront-cognito/5.7.3-integration/><b>5.7.3.</b> Integrate and deploy Frontend, Backend, Cognito
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/5.8-cicd-monitoring-testing/ title="CI/CD, Monitoring, and Validation" class="dd-item
+parent"><a href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/><b>5.8.</b> CI/CD, Monitoring, and Validation
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.1-oidc/ title="Connect GitHub Actions to AWS with OIDC" class=dd-item><a href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.1-oidc/><b>5.8.1.</b> Connect GitHub Actions to AWS with OIDC
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.2-frontend/ title="CI/CD Deployment for the React Frontend" class=dd-item><a href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.2-frontend/><b>5.8.2.</b> CI/CD Deployment for the React Frontend
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.3-backend/ title="Deploy Backend Spring Boot with CI/CD" class="dd-item
+active"><a href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.3-backend/><b>5.8.3.</b> Deploy Backend Spring Boot with CI/CD
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.4-monitoring/ title="CloudWatch Monitoring and System Validation" class=dd-item><a href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.4-monitoring/><b>5.8.4.</b> CloudWatch Monitoring and System Validation
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/5-workshop/5.9-cleanup/ title="Clean Up AWS Resources" class=dd-item><a href=/Workshop/5-workshop/5.9-cleanup/><b>5.9.</b> Clean Up AWS Resources
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Workshop/6-self-evaluation/ title=Self-Assessment class=dd-item><a href=/Workshop/6-self-evaluation/><b>6. </b>Self-Assessment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Workshop/7-feedback/ title="Sharing and Feedback" class=dd-item><a href=/Workshop/7-feedback/><b>7. </b>Sharing and Feedback
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://kieuminhquang.github.io/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.3-backend/ selected>English</option><option id=vi value=https://kieuminhquang.github.io/Workshop/vi/5-workshop/5.8-cicd-monitoring-testing/5.8.3-backend/>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>14-11-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=/Workshop/>Internship Report</a> > <a href=/Workshop/5-workshop/>Workshop</a> > <a href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/>CI/CD, Monitoring, and Validation</a> > Deploy Backend Spring Boot with CI/CD</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#step-1--verify-the-backend-on-ec2-before-deployment>Step 1 – Verify the Backend on EC2 before deployment</a></li><li><a href=#step-2--prepare-the-github-workflow-and-deployment-scripts>Step 2 – Prepare the GitHub workflow and deployment scripts</a></li><li><a href=#step-3--configure-the-deployment-backup-and-rollback-script>Step 3 – Configure the deployment, backup and rollback script</a></li><li><a href=#step-4--test-rollback-behavior-using-a-mock-environment>Step 4 – Test rollback behavior using a mock environment</a></li><li><a href=#step-5--configure-the-backend-github-actions-workflow>Step 5 – Configure the Backend GitHub Actions workflow</a></li><li><a href=#step-6--review-changes-commit-and-push>Step 6 – Review changes, commit and push</a></li><li><a href=#step-7--verify-github-actions-and-the-ssm-deployment-results>Step 7 – Verify GitHub Actions and the SSM deployment results</a></li><li><a href=#step-8--verify-the-backend-and-website-after-deployment>Step 8 – Verify the Backend and website after deployment</a></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Deploy Backend Spring Boot with CI/CD</h1><h2 id=step-1--verify-the-backend-on-ec2-before-deployment>Step 1 – Verify the Backend on EC2 before deployment</h2><p>The <strong>TechVina Backend</strong> runs as a Spring Boot application on the <code>techvina-ec2-backend</code> EC2 instance (Ubuntu 24.04) in <strong>Singapore (<code>ap-southeast-1</code>)</strong>. The existing <code>techvina-backend.service</code> was configured in <strong>section 5.5</strong>. GitHub Actions updates the deployed JAR without recreating the EC2 instance or the RDS database.</p><ol><li>Open <strong>AWS Systems Manager → Session Manager</strong> and connect to the Backend instance.</li><li>Verify the service and HTTP health endpoint:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo systemctl is-active techvina-backend.service
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>active
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>curl -sS --max-time <span style=color:#ae81ff>5</span> http://127.0.0.1:8080/actuator/health
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{<span style=color:#f92672>&#34;status&#34;</span>:<span style=color:#e6db74>&#34;UP&#34;</span>}
+</span></span></code></pre></div><ol start=3><li>Verify that AWS CLI, the JAR validation utility and the deployment lock utility are available:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>aws --version
+</span></span></code></pre></div><p>The AWS CLI version recorded during deployment was <strong>v2.35.21</strong>. The utility checks returned:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>command -v flock
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>/usr/bin/flock
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>command -v unzip
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>/usr/bin/unzip
+</span></span></code></pre></div><p>If <code>unzip</code> is not installed, install it on Ubuntu and verify the path:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt-get install -y unzip
+</span></span><span style=display:flex><span>command -v unzip
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>/usr/bin/unzip
+</span></span></code></pre></div><p>The EC2 instance role <code>techvina-ec2-ssm-role</code> grants <code>s3:GetObject</code> on <code>releases/*</code> in the Backend Artifacts bucket. The GitHub Actions Backend role and OIDC trust configuration were created in <strong>section 5.8.1</strong>.</p><h2 id=step-2--prepare-the-github-workflow-and-deployment-scripts>Step 2 – Prepare the GitHub workflow and deployment scripts</h2><p>Open the <strong>TechVina</strong> repository in VS Code and work on the <code>master</code> branch. The deployment-related files are:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>TechVina/
+</span></span><span style=display:flex><span>├── backend/
+</span></span><span style=display:flex><span>│   ├── pom.xml
+</span></span><span style=display:flex><span>│   └── src/
+</span></span><span style=display:flex><span>└── .github/
+</span></span><span style=display:flex><span>    ├── workflows/
+</span></span><span style=display:flex><span>    │   └── deploy-backend.yml
+</span></span><span style=display:flex><span>    ├── scripts/
+</span></span><span style=display:flex><span>    │   └── deploy-backend.sh
+</span></span><span style=display:flex><span>    └── tests/
+</span></span><span style=display:flex><span>        └── test-backend-rollback.sh
+</span></span></code></pre></div><p>The <strong><code>techvina-backend-artifacts-&lt;AWS_ACCOUNT_ID></code></strong> bucket stores two artifacts under <code>releases/</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>releases/backend-&lt;COMMIT_SHA&gt;.jar
+</span></span><span style=display:flex><span>releases/deploy-backend-&lt;COMMIT_SHA&gt;.sh
+</span></span></code></pre></div><p>In the configuration examples below, replace <code>&lt;AWS_ACCOUNT_ID></code> with the AWS account ID and <code>&lt;EC2_INSTANCE_ID></code> with the actual Backend EC2 instance ID. The deployed resources were verified in <code>ap-southeast-1</code>.</p><h2 id=step-3--configure-the-deployment-backup-and-rollback-script>Step 3 – Configure the deployment, backup and rollback script</h2><p>Open <code>.github/scripts/deploy-backend.sh</code>. The script downloads the JAR identified by a commit SHA, validates its archive structure with <code>unzip</code>, backs up the live JAR and restarts the Spring Boot service through <code>systemctl</code>. If deployment fails after the JAR replacement begins, the <code>on_exit()</code> handler restores the backup and checks <code>/actuator/health</code>. A <code>flock</code> lock prevents overlapping deployments.</p><p>Use the following script and replace <code>&lt;AWS_ACCOUNT_ID></code> with the account used for deployment:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/env bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>set -Eeuo pipefail
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Cau hinh TechVina Backend</span>
+</span></span><span style=display:flex><span>BASE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/home/ubuntu/projects/TechVina/backend&#34;</span>
+</span></span><span style=display:flex><span>LIVE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$BASE<span style=color:#e6db74>/target/backend-0.0.1-SNAPSHOT.jar&#34;</span>
+</span></span><span style=display:flex><span>SERVICE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;techvina-backend.service&#34;</span>
+</span></span><span style=display:flex><span>BACKUP_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$BASE<span style=color:#e6db74>/backups&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>BUCKET<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;techvina-backend-artifacts-&lt;AWS_ACCOUNT_ID&gt;&#34;</span>
+</span></span><span style=display:flex><span>REGION<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ap-southeast-1&#34;</span>
+</span></span><span style=display:flex><span>HEALTH_URL<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://127.0.0.1:8080/actuator/health&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Nhan commit SHA tu GitHub Actions</span>
+</span></span><span style=display:flex><span>COMMIT_SHA<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>1<span style=color:#66d9ef>:-</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> ! <span style=color:#e6db74>&#34;</span>$COMMIT_SHA<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>=</span>~ ^<span style=color:#f92672>[</span>a-f0-9<span style=color:#f92672>]{</span>40<span style=color:#f92672>}</span>$ <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;ERROR: Invalid commit SHA&#34;</span>
+</span></span><span style=display:flex><span>  exit <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Script phai chay voi quyen root</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$EUID<span style=color:#e6db74>&#34;</span> -ne <span style=color:#ae81ff>0</span> <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;ERROR: Root permission required&#34;</span>
+</span></span><span style=display:flex><span>  exit <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Ngan hai lan trien khai chay dong thoi</span>
+</span></span><span style=display:flex><span>exec 9&gt;/run/lock/techvina-backend-deploy.lock
+</span></span><span style=display:flex><span>flock -n <span style=color:#ae81ff>9</span> <span style=color:#f92672>||</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;ERROR: Another deployment is running&#34;</span>
+</span></span><span style=display:flex><span>  exit <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Tao thu muc sao luu</span>
+</span></span><span style=display:flex><span>install -d -o ubuntu -g ubuntu -m <span style=color:#ae81ff>700</span> <span style=color:#e6db74>&#34;</span>$BACKUP_DIR<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>NEW_JAR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>mktemp <span style=color:#e6db74>&#34;</span>$BASE<span style=color:#e6db74>/target/.deploy-XXXXXX.jar&#34;</span><span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>BACKUP<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>SWITCH_STARTED<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span>DEPLOY_OK<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Kiem tra trang thai ung dung</span>
+</span></span><span style=display:flex><span>wait_for_health<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> i in <span style=color:#66d9ef>$(</span>seq <span style=color:#ae81ff>1</span> 45<span style=color:#66d9ef>)</span>; <span style=color:#66d9ef>do</span>
+</span></span><span style=display:flex><span>    RESPONSE<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>curl -fsS --max-time <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      <span style=color:#e6db74>&#34;</span>$HEALTH_URL<span style=color:#e6db74>&#34;</span> 2&gt;/dev/null <span style=color:#f92672>||</span> true<span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$RESPONSE<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;{&#34;status&#34;:&#34;UP&#34;}&#39;</span> <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    sleep <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Tu dong rollback neu trien khai that bai</span>
+</span></span><span style=display:flex><span>on_exit<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  STATUS<span style=color:#f92672>=</span>$?
+</span></span><span style=display:flex><span>  trap - EXIT
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  rm -f <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$SWITCH_STARTED<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>==</span> true <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;</span>$DEPLOY_OK<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>==</span> false <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    echo <span style=color:#e6db74>&#34;DEPLOY FAILED - Starting rollback&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    systemctl stop <span style=color:#e6db74>&#34;</span>$SERVICE<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>||</span> true
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> install -o ubuntu -g ubuntu -m <span style=color:#ae81ff>600</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      <span style=color:#e6db74>&#34;</span>$BACKUP<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>      systemctl start <span style=color:#e6db74>&#34;</span>$SERVICE<span style=color:#e6db74>&#34;</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> wait_for_health; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>        echo <span style=color:#e6db74>&#34;ROLLBACK SUCCESS&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>        echo <span style=color:#e6db74>&#34;ERROR: Rollback health check failed&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>      echo <span style=color:#e6db74>&#34;ERROR: Could not restore Backend&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    STATUS<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  exit <span style=color:#e6db74>&#34;</span>$STATUS<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>trap on_exit EXIT
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Deploying commit: </span>$COMMIT_SHA<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 1: Tai JAR moi tu Amazon S3</span>
+</span></span><span style=display:flex><span>aws s3 cp <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  <span style=color:#e6db74>&#34;s3://</span>$BUCKET<span style=color:#e6db74>/releases/backend-</span>$COMMIT_SHA<span style=color:#e6db74>.jar&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --region <span style=color:#e6db74>&#34;</span>$REGION<span style=color:#e6db74>&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --only-show-errors
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 2: Kiem tra file JAR</span>
+</span></span><span style=display:flex><span>test -s <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>unzip -tq <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span> &gt;/dev/null
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 3: Kiem tra Backend hien tai</span>
+</span></span><span style=display:flex><span>test -s <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>systemctl is-active --quiet <span style=color:#e6db74>&#34;</span>$SERVICE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 4: Sao luu phien ban dang chay</span>
+</span></span><span style=display:flex><span>BACKUP<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>mktemp <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  <span style=color:#e6db74>&#34;</span>$BACKUP_DIR<span style=color:#e6db74>/backend-before-</span><span style=color:#66d9ef>$(</span>date -u +%Y%m%dT%H%M%SZ<span style=color:#66d9ef>)</span><span style=color:#e6db74>-XXXXXX.jar&#34;</span><span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>install -o ubuntu -g ubuntu -m <span style=color:#ae81ff>600</span> <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$BACKUP<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Backup saved: </span>$BACKUP<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 5: Thay the JAR va khoi dong lai</span>
+</span></span><span style=display:flex><span>SWITCH_STARTED<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>systemctl stop <span style=color:#e6db74>&#34;</span>$SERVICE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>install -o ubuntu -g ubuntu -m <span style=color:#ae81ff>600</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>systemctl start <span style=color:#e6db74>&#34;</span>$SERVICE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 6: Kiem tra Health Check</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Checking Backend health...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> wait_for_health; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>  DEPLOY_OK<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;DEPLOY SUCCESS&#34;</span>
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;Commit: </span>$COMMIT_SHA<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;Health: </span>$RESPONSE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>  echo <span style=color:#e6db74>&#34;ERROR: Backend health check failed&#34;</span>
+</span></span><span style=display:flex><span>  exit <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Buoc 7: Don dep Backup cu sau khi Deploy thanh cong</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Cleaning up old Backend backups...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Lay danh sach Backup tu dong, moi nhat truoc</span>
+</span></span><span style=display:flex><span>mapfile -t BACKUPS &lt; &lt;<span style=color:#f92672>(</span>
+</span></span><span style=display:flex><span>  find <span style=color:#e6db74>&#34;</span>$BACKUP_DIR<span style=color:#e6db74>&#34;</span> -maxdepth <span style=color:#ae81ff>1</span> -type f <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -name <span style=color:#e6db74>&#39;backend-before-????????T??????Z-*.jar&#39;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -printf <span style=color:#e6db74>&#39;%f\n&#39;</span> | LC_ALL<span style=color:#f92672>=</span>C sort -r
+</span></span><span style=display:flex><span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Chi giu lai 3 ban Backup tu dong moi nhat</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>((</span> <span style=color:#e6db74>${#</span>BACKUPS[@]<span style=color:#e6db74>}</span> &gt; <span style=color:#ae81ff>3</span> <span style=color:#f92672>))</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> OLD_BACKUP in <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>BACKUPS[@]:3<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>; <span style=color:#66d9ef>do</span>
+</span></span><span style=display:flex><span>    rm -f -- <span style=color:#e6db74>&#34;</span>$BACKUP_DIR<span style=color:#e6db74>/</span>$OLD_BACKUP<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>||</span>
+</span></span><span style=display:flex><span>      echo <span style=color:#e6db74>&#34;WARNING: Could not delete </span>$OLD_BACKUP<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>done</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Backup cleanup completed&#34;</span>
+</span></span></code></pre></div><p>After a successful deployment, the script retains up to <strong>the three newest automatically created backups</strong> in <code>backend/backups/</code>. Rollback on the actual EC2 instance is only attempted if an error occurs after the JAR switch has started; no rollback happened during the successful deployment.</p><h2 id=step-4--test-rollback-behavior-using-a-mock-environment>Step 4 – Test rollback behavior using a mock environment</h2><p>Open <code>.github/tests/test-backend-rollback.sh</code>. The test extracts the actual deployment script&rsquo;s <code>on_exit()</code> function, but mocks <code>systemctl</code>, <code>install</code>, JAR files and the health check in a temporary directory. It never stops the production Backend on EC2.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/env bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>set -Eeuo pipefail
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Xac dinh thu muc project</span>
+</span></span><span style=display:flex><span>ROOT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>cd <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>dirname <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>BASH_SOURCE[0]<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>/../..&#34;</span> <span style=color:#f92672>&amp;&amp;</span> pwd<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>DEPLOY_SCRIPT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$ROOT<span style=color:#e6db74>/.github/scripts/deploy-backend.sh&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Tao moi truong thu nghiem tam</span>
+</span></span><span style=display:flex><span>TEST_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>mktemp -d<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>trap <span style=color:#e6db74>&#39;rm -rf &#34;$TEST_DIR&#34;&#39;</span> EXIT
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>LIVE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$TEST_DIR<span style=color:#e6db74>/backend.jar&#34;</span>
+</span></span><span style=display:flex><span>BACKUP<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$TEST_DIR<span style=color:#e6db74>/backend-backup.jar&#34;</span>
+</span></span><span style=display:flex><span>NEW_JAR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$TEST_DIR<span style=color:#e6db74>/backend-new.jar&#34;</span>
+</span></span><span style=display:flex><span>SERVICE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;techvina-backend.service&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Gia lap JAR cu va JAR moi bi loi</span>
+</span></span><span style=display:flex><span>printf <span style=color:#e6db74>&#39;BACKEND_VERSION_OK\n&#39;</span> &gt; <span style=color:#e6db74>&#34;</span>$BACKUP<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>printf <span style=color:#e6db74>&#39;BACKEND_VERSION_FAILED\n&#39;</span> &gt; <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>printf <span style=color:#e6db74>&#39;TEMPORARY_JAR\n&#39;</span> &gt; <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SWITCH_STARTED<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>DEPLOY_OK<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Gia lap systemctl, khong dung den EC2</span>
+</span></span><span style=display:flex><span>systemctl<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#34;</span>$1<span style=color:#e6db74>&#34;</span> in
+</span></span><span style=display:flex><span>    stop|start<span style=color:#f92672>)</span> <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#f92672>)</span> <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span> ;;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>esac</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Gia lap lenh install de khoi phuc file</span>
+</span></span><span style=display:flex><span>install<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  local source_file<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>@: -2:1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>  local target_file<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>@: -1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>  cp <span style=color:#e6db74>&#34;</span>$source_file<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$target_file<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Gia lap Health Check sau Rollback</span>
+</span></span><span style=display:flex><span>wait_for_health<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  cmp -s <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$BACKUP<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Lay ham Rollback tu script trien khai that</span>
+</span></span><span style=display:flex><span>source &lt;<span style=color:#f92672>(</span>sed -n <span style=color:#e6db74>&#39;/^on_exit() {/,/^}/p&#39;</span> <span style=color:#e6db74>&#34;</span>$DEPLOY_SCRIPT<span style=color:#e6db74>&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Gia lap trien khai that bai</span>
+</span></span><span style=display:flex><span>set +e
+</span></span><span style=display:flex><span>OUTPUT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span> <span style=color:#f92672>(</span>set +e; false; on_exit<span style=color:#66d9ef>)</span><span style=color:#e6db74> 2&gt;&amp;1 )&#34;</span>
+</span></span><span style=display:flex><span>EXIT_CODE<span style=color:#f92672>=</span>$?
+</span></span><span style=display:flex><span>set -e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Xac minh ket qua Rollback</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$EXIT_CODE<span style=color:#e6db74>&#34;</span> -eq <span style=color:#ae81ff>1</span> <span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$OUTPUT<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>==</span> *<span style=color:#e6db74>&#34;ROLLBACK SUCCESS&#34;</span>* <span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>cmp -s <span style=color:#e6db74>&#34;</span>$LIVE<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$BACKUP<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[[</span> ! -e <span style=color:#e6db74>&#34;</span>$NEW_JAR<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;ROLLBACK_TEST_OK&#34;</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Exit code: </span>$EXIT_CODE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Backup restored successfully&#34;</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;Temporary JAR removed&#34;</span>
+</span></span></code></pre></div><p>From the repository root, open <strong>Git Bash</strong> in VS Code on Windows and run:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>bash .github/tests/test-backend-rollback.sh
+</span></span></code></pre></div><p><strong>Actual Git Bash output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>ROLLBACK_TEST_OK
+</span></span><span style=display:flex><span>Exit code: 1
+</span></span><span style=display:flex><span>Backup restored successfully
+</span></span><span style=display:flex><span>Temporary JAR removed
+</span></span></code></pre></div><p><code>Exit code: 1</code> is the intentionally simulated failed deployment. The overall rollback test reports <code>ROLLBACK_TEST_OK</code>. This confirms the rollback logic in the mock environment, <strong>not a deliberately induced production EC2 failure</strong>.</p><h2 id=step-5--configure-the-backend-github-actions-workflow>Step 5 – Configure the Backend GitHub Actions workflow</h2><p>Open <code>.github/workflows/deploy-backend.yml</code>. This workflow uses <strong>Java 21</strong>, <strong>Maven</strong>, OIDC and SSM to deploy to the EC2 instance. The full workflow configuration is:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build TechVina Backend</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>branches</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>master</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>paths</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;backend/**&#34;</span>
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;.github/workflows/deploy-backend.yml&#34;</span>
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;.github/scripts/**&#34;</span>
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;.github/tests/**&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>workflow_dispatch</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>inputs</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>deploy</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>description</span>: <span style=color:#e6db74>&#34;Deploy Backend to EC2&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>type</span>: <span style=color:#ae81ff>boolean</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>required</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>default</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>permissions</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>contents</span>: <span style=color:#ae81ff>read</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>id-token</span>: <span style=color:#ae81ff>write</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>concurrency</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>group</span>: <span style=color:#ae81ff>deploy-techvina-backend</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>cancel-in-progress</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build Spring Boot Backend</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>defaults</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>run</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>working-directory</span>: <span style=color:#ae81ff>backend</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 1: Lấy source code</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Checkout source code</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v7</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 2: Cài đặt Java 21</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Setup Java 21</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-java@v6</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>distribution</span>: <span style=color:#ae81ff>temurin</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>java-version</span>: <span style=color:#e6db74>&#34;21&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>cache</span>: <span style=color:#ae81ff>maven</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>cache-dependency-path</span>: <span style=color:#ae81ff>backend/pom.xml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 3: Build Spring Boot bằng Maven</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build Backend</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>mvn -B -ntp clean package -DskipTests</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 4: Kiểm tra file JAR</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Verify JAR file</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>test -s target/backend-0.0.1-SNAPSHOT.jar</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Kiểm tra thông tin OIDC thực tế</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Debug OIDC claims</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/github-script@v8</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>script</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            const token = await core.getIDToken(&#39;sts.amazonaws.com&#39;);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            const payload = JSON.parse(
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              Buffer.from(token.split(&#39;.&#39;)[1], &#39;base64url&#39;).toString(&#39;utf8&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            );
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            core.info(&#39;OIDC sub: &#39; + payload.sub);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            core.info(&#39;OIDC aud: &#39; + payload.aud);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            core.info(&#39;OIDC iss: &#39; + payload.iss);</span>            
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 5: Xác thực AWS bằng GitHub OIDC</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Configure AWS credentials</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>aws-actions/configure-aws-credentials@v6.3.0</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>role-to-assume</span>: <span style=color:#ae81ff>arn:aws:iam::&lt;AWS_ACCOUNT_ID&gt;:role/techvina-github-actions-backend-role</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>aws-region</span>: <span style=color:#ae81ff>ap-southeast-1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 6: Kiểm tra xác thực AWS</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Verify AWS identity</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>aws sts get-caller-identity</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 7: Upload file JAR lên Amazon S3</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Upload Backend JAR to S3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws s3 cp target/backend-0.0.1-SNAPSHOT.jar \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;s3://techvina-backend-artifacts-&lt;AWS_ACCOUNT_ID&gt;/releases/backend-${GITHUB_SHA}.jar&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1 \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --no-progress \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --only-show-errors</span>          
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Kiem tra cu phap script trien khai</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Validate Backend deployment script</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>bash -n &#34;$GITHUB_WORKSPACE/.github/scripts/deploy-backend.sh&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Kiem thu logic Rollback</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Test backend rollback logic</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>shell</span>: <span style=color:#ae81ff>bash</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          set -euo pipefail
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          bash &#34;$GITHUB_WORKSPACE/.github/tests/test-backend-rollback.sh&#34;</span>          
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Upload script trien khai len Amazon S3</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Upload Backend deployment script to S3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws s3 cp \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;$GITHUB_WORKSPACE/.github/scripts/deploy-backend.sh&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;s3://techvina-backend-artifacts-&lt;AWS_ACCOUNT_ID&gt;/releases/deploy-backend-${GITHUB_SHA}.sh&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1 \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --no-progress \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --only-show-errors</span>          
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 8: Kiểm tra GitHub Actions gửi lệnh đến EC2</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Verify SSM connection to EC2</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          COMMAND_ID=$(aws ssm send-command \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-ids &lt;EC2_INSTANCE_ID&gt; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --document-name AWS-RunShellScript \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --parameters &#39;commands=[&#34;echo TechVina SSM connection OK&#34;]&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1 \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --query &#39;Command.CommandId&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --output text)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          echo &#34;SSM Command ID: $COMMAND_ID&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws ssm wait command-executed \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --command-id &#34;$COMMAND_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-id &lt;EC2_INSTANCE_ID&gt; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws ssm get-command-invocation \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --command-id &#34;$COMMAND_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-id &lt;EC2_INSTANCE_ID&gt; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1 \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --query &#39;{Status:Status,Output:StandardOutputContent}&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --output json</span>          
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Bước 9: Kiểm tra script triển khai trên EC2 qua SSM</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Verify deployment script on EC2</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>shell</span>: <span style=color:#ae81ff>bash</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          set -euo pipefail
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          cat &gt; ssm-script-check.json &lt;&lt;EOF
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;commands&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              &#34;aws s3 cp s3://techvina-backend-artifacts-&lt;AWS_ACCOUNT_ID&gt;/releases/deploy-backend-${GITHUB_SHA}.sh /tmp/deploy-backend-${GITHUB_SHA}.sh --region ap-southeast-1 --only-show-errors &amp;&amp; bash -n /tmp/deploy-backend-${GITHUB_SHA}.sh &amp;&amp; echo SSM_SCRIPT_CHECK_OK&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            ]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          EOF
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          COMMAND_ID=$(aws ssm send-command \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-ids &lt;EC2_INSTANCE_ID&gt; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --document-name AWS-RunShellScript \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --parameters file://ssm-script-check.json \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1 \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --query &#39;Command.CommandId&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --output text)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          echo &#34;SSM Command ID: $COMMAND_ID&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws ssm wait command-executed \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --command-id &#34;$COMMAND_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-id &lt;EC2_INSTANCE_ID&gt; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws ssm get-command-invocation \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --command-id &#34;$COMMAND_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-id &lt;EC2_INSTANCE_ID&gt; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region ap-southeast-1 \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --query &#39;{Status:Status,Output:StandardOutputContent}&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --output json</span>          
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Buoc 10: Tu dong trien khai Backend qua SSM</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy Backend to EC2 via SSM</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>if</span>: <span style=color:#ae81ff>${{ github.ref == &#39;refs/heads/master&#39; &amp;&amp; (github.event_name == &#39;push&#39; || (github.event_name == &#39;workflow_dispatch&#39; &amp;&amp; inputs.deploy == true)) }}</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>shell</span>: <span style=color:#ae81ff>bash</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          set -euo pipefail
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          INSTANCE_ID=&#34;&lt;EC2_INSTANCE_ID&gt;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          REGION=&#34;ap-southeast-1&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Tao lenh SSM de tai va chay script
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          cat &gt; ssm-deploy.json &lt;&lt;EOF
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;commands&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              &#34;aws s3 cp s3://techvina-backend-artifacts-&lt;AWS_ACCOUNT_ID&gt;/releases/deploy-backend-${GITHUB_SHA}.sh /tmp/deploy-backend-${GITHUB_SHA}.sh --region ${REGION} --only-show-errors &amp;&amp; bash -n /tmp/deploy-backend-${GITHUB_SHA}.sh &amp;&amp; sudo bash /tmp/deploy-backend-${GITHUB_SHA}.sh ${GITHUB_SHA}&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            ],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;executionTimeout&#34;: [&#34;600&#34;]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          EOF
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          COMMAND_ID=$(aws ssm send-command \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-ids &#34;$INSTANCE_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --document-name AWS-RunShellScript \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --parameters file://ssm-deploy.json \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region &#34;$REGION&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --query &#39;Command.CommandId&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --output text)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          echo &#34;SSM Command ID: $COMMAND_ID&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Theo doi qua trinh trien khai
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          STATUS=&#34;Pending&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          for i in $(seq 1 60); do
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            STATUS=$(aws ssm get-command-invocation \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              --command-id &#34;$COMMAND_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              --instance-id &#34;$INSTANCE_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              --region &#34;$REGION&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              --query Status \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              --output text 2&gt;/dev/null || echo Pending)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            case &#34;$STATUS&#34; in
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              Success|Failed|Cancelled|TimedOut|DeliveryTimedOut|ExecutionTimedOut|Undeliverable|Terminated)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                break
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            esac
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            sleep 10
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          done
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          # Hien thi ket qua trien khai
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          aws ssm get-command-invocation \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --command-id &#34;$COMMAND_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --instance-id &#34;$INSTANCE_ID&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --region &#34;$REGION&#34; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --query &#39;{Status:Status,ResponseCode:ResponseCode,Output:StandardOutputContent,Error:StandardErrorContent}&#39; \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            --output json
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          test &#34;$STATUS&#34; = &#34;Success&#34;</span>          
+</span></span></code></pre></div><p>Execution sequence: <code>Checkout source code</code> → <code>Setup Java 21</code> → <code>mvn clean package -DskipTests</code> → JAR verification → AWS OIDC authentication → JAR upload to S3 → deployment script validation and mocked rollback test → script upload to S3 → SSM connectivity and remote script checks → deployment through SSM.</p><p>The <code>push</code> trigger handles changes under <code>backend/**</code>, <code>.github/workflows/deploy-backend.yml</code>, <code>.github/scripts/**</code> and <code>.github/tests/**</code> on <code>master</code>. The <code>workflow_dispatch</code> input <code>deploy</code> defaults to <code>false</code>, but this skips <strong>only the final deployment step</strong>: build, artifact uploads and SSM verification steps still run.</p><h2 id=step-6--review-changes-commit-and-push>Step 6 – Review changes, commit and push</h2><p>In <strong>Git Bash</strong> at the <code>TechVina</code> repository root, review the updated deployment files:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git --no-pager diff -- .github/workflows/deploy-backend.yml .github/scripts/deploy-backend.sh
+</span></span></code></pre></div><p>Ensure that the Backend role ARN, S3 bucket name and EC2 instance ID refer to the resources provisioned in your AWS account. Stage the updates:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git add .github/workflows/deploy-backend.yml .github/scripts/deploy-backend.sh
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git status --short
+</span></span></code></pre></div><p><strong>Actual Git Bash output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>M  .github/scripts/deploy-backend.sh
+</span></span><span style=display:flex><span>M  .github/workflows/deploy-backend.yml
+</span></span></code></pre></div><p>Commit the changes:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;ci: update backend deployment workflow for AWS&#34;</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>[master 64b4a47] ci: update backend deployment workflow for AWS
+</span></span><span style=display:flex><span> 2 files changed, 13 insertions(+), 13 deletions(-)
+</span></span></code></pre></div><p>Push the commit to the deployment branch:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git push origin master
+</span></span></code></pre></div><p>This push triggers the Backend deployment workflow. When its deploy step runs, it <strong>replaces the live EC2 JAR and restarts Spring Boot</strong>. Verify that the current Backend is healthy before pushing.</p><h2 id=step-7--verify-github-actions-and-the-ssm-deployment-results>Step 7 – Verify GitHub Actions and the SSM deployment results</h2><ol><li>Open <strong>GitHub → Actions → Build TechVina Backend</strong> and select the run for commit <code>64b4a47</code>.</li><li>Verify that <strong>Build Spring Boot Backend</strong> completed the Maven build, OIDC authentication, S3 artifact uploads, rollback test and <code>Deploy Backend to EC2 via SSM</code>.</li><li>Expand <strong>Deploy Backend to EC2 via SSM</strong> to inspect the SSM command status, JAR backup and health check.</li></ol><p>Actual deployment result: <strong>Success – 1 minute 28 seconds</strong>.</p><p><img alt="Successful Backend workflow run in GitHub Actions" src=/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/01-backend-actions-success.png></p><p><strong>Actual SSM and deployment script output (excerpt):</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>SSM command status: Success
+</span></span><span style=display:flex><span>ResponseCode: 0
+</span></span><span style=display:flex><span>Deploying commit: 64b4a4732f64cac5dd7934982d0bfc3e0cbb74d5
+</span></span><span style=display:flex><span>Backup saved: /home/ubuntu/projects/TechVina/backend/backups/backend-before-20261113T152128Z-Suq5VZ.jar
+</span></span><span style=display:flex><span>Checking Backend health...
+</span></span><span style=display:flex><span>DEPLOY SUCCESS
+</span></span><span style=display:flex><span>Commit: 64b4a4732f64cac5dd7934982d0bfc3e0cbb74d5
+</span></span><span style=display:flex><span>Health: {&#34;status&#34;:&#34;UP&#34;}
+</span></span><span style=display:flex><span>Cleaning up old Backend backups...
+</span></span><span style=display:flex><span>Backup cleanup completed
+</span></span></code></pre></div><p><img alt="SSM deployment result with Success status and response code 0" src=/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/02-ssm-deploy-success.png></p><p>The backup file was created before the live JAR was replaced. Spring Boot subsequently restarted and returned <code>{"status":"UP"}</code>. The <code>DEPLOY SUCCESS</code> output confirms that this release succeeded without entering rollback.</p><h2 id=step-8--verify-the-backend-and-website-after-deployment>Step 8 – Verify the Backend and website after deployment</h2><p>On EC2, use Session Manager to verify the Backend service and health endpoint:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo systemctl is-active techvina-backend.service
+</span></span><span style=display:flex><span>curl -sS --max-time <span style=color:#ae81ff>5</span> http://127.0.0.1:8080/actuator/health
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>active
+</span></span><span style=display:flex><span>{&#34;status&#34;:&#34;UP&#34;}
+</span></span></code></pre></div><p>Open the website through CloudFront, browse the product list and open a product detail page. During the TechVina verification, the Xiaomi 15 page loaded product details, variants, colors, images and inventory information from the application.</p><p><img alt="Product details remain available through the Backend API after deployment" src=/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/03-backend-product-detail.png></p><p>The GitHub Actions pipeline built the JAR with Maven, uploaded the artifacts to S3, sent the SSM command to EC2, created a backup, replaced the JAR, restarted Spring Boot and passed its health check. The website and product data remained accessible after deployment.</p><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.2-frontend/ title="CI/CD Deployment for the React Frontend"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/Workshop/5-workshop/5.8-cicd-monitoring-testing/5.8.4-monitoring/ title="CloudWatch Monitoring and System Validation" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/Workshop/js/clipboard.min.js?1794679186></script><script src=/Workshop/js/perfect-scrollbar.min.js?1794679186></script><script src=/Workshop/js/perfect-scrollbar.jquery.min.js?1794679186></script><script src=/Workshop/js/jquery.sticky.js?1794679186></script><script src=/Workshop/js/featherlight.min.js?1794679186></script><script src=/Workshop/js/highlight.pack.js?1794679186></script><script>hljs.initHighlightingOnLoad()</script><script src=/Workshop/js/modernizr.custom-3.6.0.js?1794679186></script><script src=/Workshop/js/learn.js?1794679186></script><script src=/Workshop/js/hugo-learn.js?1794679186></script><link href=/Workshop/mermaid/mermaid.css?1794679186 rel=stylesheet><script src=/Workshop/mermaid/mermaid.js?1794679186></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>
