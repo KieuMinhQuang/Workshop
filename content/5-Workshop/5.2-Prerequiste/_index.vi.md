@@ -6,237 +6,98 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+## Step 1 – Chuẩn bị tài khoản AWS
 
+1. Đăng nhập [AWS Management Console](https://console.aws.amazon.com/) bằng tài khoản AWS thực hành có quyền tạo IAM, VPC, EC2, RDS, S3, CloudFront, Cognito, CloudWatch và Systems Manager.
+2. Vào **Billing and Cost Management → Credits** để xem credit và ngày hết hạn. Trong **AWS Budgets → Create budget**, thiết lập cảnh báo chi phí qua email.
+3. Chọn Region **Asia Pacific (Singapore) – `ap-southeast-1`** ở góc trên bên phải. Sử dụng Region này cho các tài nguyên theo khu vực; CloudFront là dịch vụ toàn cục.
+4. Xác nhận đúng AWS Account ID và quyền sử dụng các dịch vụ trong Region Singapore trước khi tạo tài nguyên.
+
+![Chọn Region Singapore trên AWS Console](/images/5-Workshop/5.2-Prerequisites/01-aws-region.png)
+
+## Step 2 – Chuẩn bị repository GitHub
+
+1. Đăng nhập [GitHub](https://github.com/) và mở repository mã nguồn [TechVina](https://github.com/TaiHoang69/TechVina).
+2. Nhấn **Fork → Create fork** để tạo repository trong tài khoản GitHub của bạn. Đường dẫn repository sau khi fork có dạng `https://github.com/<GITHUB_OWNER>/TechVina`.
+3. Mở repository của bạn và kiểm tra nhánh **`master`** cùng các thư mục `.github/workflows/`, `.github/scripts/`, `.github/tests/`, `backend/`, `frontend/` và `database/`.
+4. Sử dụng repository thuộc tài khoản của bạn để cấu hình GitHub Actions và GitHub OIDC ở mục **5.8**.
+
+![Repository TechVina trên GitHub](/images/5-Workshop/5.2-Prerequisites/02-github-fork.png)
+
+## Step 3 – Cài đặt Git for Windows
+
+1. Mở trang [Git for Windows](https://git-scm.com/downloads/win), tải phiên bản phù hợp với Windows và chạy bộ cài.
+2. Hoàn tất trình cài đặt với **Git Bash** được bật. Git Bash cung cấp môi trường chạy các lệnh `git` và script Bash trên máy Windows.
+3. Mở **Git Bash** từ Start Menu và kiểm tra phiên bản Git:
+
+```bash
+git --version
 ```
 
-#### Khởi tạo tài nguyên bằng CloudFormation
+Kết quả hiển thị phiên bản Git đã cài đặt. Trong các bước CI/CD, Git Bash được sử dụng để chạy `git add`, `git commit`, `git push` và bài kiểm thử script rollback của Backend.
 
-Trong lab này, chúng ta sẽ dùng N.Virginia region (us-east-1).
+## Step 4 – Cài đặt Visual Studio Code
 
-Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Để nguyên các lựa chọn mặc định.
+1. Truy cập [Visual Studio Code](https://code.visualstudio.com/Download) và cài đặt bản dành cho Windows.
+2. Mở **Visual Studio Code**. Trên thanh menu, chọn **Terminal → New Terminal**.
+3. Tại Terminal, nhấn mũi tên bên cạnh nút **`+`**, chọn **Git Bash** làm terminal thao tác. Nếu không có tùy chọn này, kiểm tra lại quá trình cài Git for Windows.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+Visual Studio Code được sử dụng để chỉnh sửa các file `.github/workflows/*.yml`, `.github/scripts/*.sh` và mã nguồn dự án trước khi commit lên GitHub.
 
-+ Lựa chọn 2 mục acknowledgement 
-+ Chọn Create stack
+## Step 5 – Clone mã nguồn TechVina về máy Windows
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+1. Trong Git Bash, chuyển đến thư mục muốn lưu dự án. Ví dụ, để tạo thư mục dự án tại ổ `C:`, chạy:
 
-Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thành.
+```bash
+cd /c
+git clone https://github.com/<GITHUB_OWNER>/TechVina.git
+cd TechVina
+git branch --show-current
+git status --short
+```
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+2. Thay `<GITHUB_OWNER>` bằng tên tài khoản GitHub chứa repository của bạn. `git branch --show-current` cần trả về `master` khi repository sử dụng nhánh chính `master` như trong Workshop. `git status --short` không hiển thị dòng nào khi thư mục làm việc chưa có thay đổi.
+3. Trong Visual Studio Code, chọn **File → Open Folder**, chọn thư mục dự án vừa clone (ví dụ `C:\TechVina`). Kiểm tra các thư mục `frontend/`, `backend/` và `.github/` ở Explorer.
 
-+ 2 VPCs đã được tạo
+Khi sửa workflow trong mục **5.8**, mở Git Bash tại thư mục gốc của repository để chạy lệnh Git và kiểm thử các script Bash. Không chạy lệnh Bash trực tiếp trong PowerShell nếu `bash` chưa được cấu hình trong `PATH`.
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+## Step 6 – Chuẩn bị môi trường thao tác AWS
 
-+ 3 EC2s đã được tạo
+Workshop sử dụng **AWS Management Console**, **AWS CloudShell**, **EC2 Session Manager**, **Visual Studio Code**, **Git Bash** và **GitHub Actions**:
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+- **AWS Management Console:** tạo và cấu hình tài nguyên AWS.
+- **AWS CloudShell:** kiểm tra thông tin tài khoản và chạy AWS CLI trong trình duyệt.
+- **EC2 Session Manager:** thực hiện các lệnh cài đặt, kiểm tra và vận hành Spring Boot trên EC2 Ubuntu.
+- **Visual Studio Code và Git Bash:** chỉnh sửa mã nguồn, quản lý Git và chạy bài kiểm thử rollback trên Windows.
+- **GitHub Actions:** dùng môi trường runner để cài Node.js **22** cho Frontend và Java **21** cho Backend, thực hiện build và triển khai. Không bắt buộc cài Node.js, Java, Maven hoặc AWS CLI trên Windows để chạy hai workflow này.
+
+Ghi lại các thông số sẽ được tạo trong các bước tiếp theo:
+
+| Tên biến | Giá trị |
+|---|---|
+| `AWS_REGION` | `ap-southeast-1` |
+| `AWS_ACCOUNT_ID` | AWS Account ID gồm 12 chữ số |
+| `GITHUB_OWNER` | Tài khoản GitHub chứa repository triển khai |
+| `EC2_INSTANCE_ID`, `EC2_PUBLIC_IP` | Ghi sau khi tạo EC2 |
+| `RDS_ENDPOINT` | Ghi sau khi tạo RDS |
+| `CF_DISTRIBUTION_ID`, `CF_DOMAIN` | Ghi sau khi tạo CloudFront |
+| `COGNITO_POOL_ID`, `COGNITO_CLIENT_ID`, `COGNITO_DOMAIN` | Ghi sau khi tạo Cognito |
+
+Dự án sử dụng **hai S3 buckets**: `techvina-frontend-<AWS_ACCOUNT_ID>` (Frontend và hình ảnh sản phẩm) và `techvina-backend-artifacts-<AWS_ACCOUNT_ID>` (JAR và script CI/CD). Tên bucket phải duy nhất trên Amazon S3.
+
+## Step 7 – Mở AWS CloudShell và kiểm tra tài khoản
+
+1. Trong **AWS Management Console**, chọn Region **Asia Pacific (Singapore) – `ap-southeast-1`**.
+2. Nhấn biểu tượng **CloudShell (`>_`)** để mở terminal trong trình duyệt.
+3. Chạy các lệnh sau **trong CloudShell**:
+
+```bash
+aws --version
+aws sts get-caller-identity
+export AWS_REGION=ap-southeast-1
+echo "$AWS_REGION"
+```
+
+4. Đối chiếu giá trị `Account` với AWS Account ID của tài khoản thực hành. AWS CloudShell sử dụng thông tin xác thực từ phiên AWS Console, không cần tạo AWS Access Key trên máy Windows.
+
+![Mở AWS CloudShell trên trình duyệt](/images/5-Workshop/5.2-Prerequisites/03-aws-cloudshell.png)
