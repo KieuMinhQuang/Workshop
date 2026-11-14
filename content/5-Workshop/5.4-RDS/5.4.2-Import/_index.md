@@ -16,7 +16,7 @@ pre : " <b> 5.4.2 </b> "
 
 **Expected result:** `database/full/phone_store.sql` exists in the repository and contains the schema and sample data for the `phone_store` database.
 
-![TechVina SQL source file](/images/5-Workshop/5.4-RDS/5.4.2-Import/01-sql-source.png)
+![TechVina SQL source file](/Workshop/images/5-Workshop/5.4-RDS/5.4.2-Import/01-sql-source.png)
 
 ## Step 2 – Retrieve Amazon RDS connection details
 

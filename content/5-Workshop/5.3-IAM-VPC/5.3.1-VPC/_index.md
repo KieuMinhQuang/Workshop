@@ -12,7 +12,7 @@ pre : " <b> 5.3.1 </b> "
 2. Choose **VPC only**, name `techvina-vpc`, IPv4 CIDR `10.20.0.0/16`, tenancy `Default`.
 3. Select **Create VPC**. Under **Actions → Edit VPC settings**, enable **DNS resolution** and **DNS hostnames**.
 
-![VPC and subnet configuration](/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/01-vpc-create.png)
+![VPC and subnet configuration](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/01-vpc-create.png)
 
 ## Step 2 – Create three subnets
 
@@ -26,7 +26,7 @@ Under **VPC → Subnets → Create subnet**, select the VPC and create:
 
 For the public subnet, enable **auto-assign public IPv4**. Leave it disabled for both private subnets.
 
-![Three TechVina VPC subnets](/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/02-subnets.png)
+![Three TechVina VPC subnets](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/02-subnets.png)
 
 ## Step 3 – Internet Gateway and routing
 
@@ -36,7 +36,7 @@ For the public subnet, enable **auto-assign public IPv4**. Leave it disabled for
 4. Associate the route table with `techvina-public-a`.
 5. Create `techvina-private-rt` for both private subnets. Keep only the local VPC route; do not add a default Internet route to private subnets.
 
-![Configure route tables and Internet gateway](/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/03-route-table.png)
+![Configure route tables and Internet gateway](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/03-route-table.png)
 
 ## Step 4 – Validate
 

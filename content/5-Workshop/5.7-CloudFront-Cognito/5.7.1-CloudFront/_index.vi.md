@@ -244,7 +244,7 @@ Sau khi tạo, kiểm tra thứ tự behaviors:
 | `0` | `/api/*` | `techvina-ec2-backend` |
 | `1` | `Default (*)` | Frontend S3 + images |
 
-![Thứ tự các cache behaviors của TechVina](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/04-cloudfront-behaviors-actual.png)
+![Thứ tự các cache behaviors của TechVina](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/04-cloudfront-behaviors-actual.png)
 
 Kiểm thử API:
 
@@ -291,7 +291,7 @@ function handler(event) {
 4. Chọn **Add association**, **Distribution** là distribution TechVina, **Event type = Viewer request**, **Cache behavior = Default (*)**. Nếu AWS hiển thị cảnh báo ghi đè Function, kiểm tra **Behaviors → Default (*) → Edit → Function associations** trước khi xác nhận.
 5. Chọn **Add association** và đợi distribution triển khai cấu hình mới.
 
-![Kết quả kiểm thử SPA Function](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/05-spa-function-test.png)
+![Kết quả kiểm thử SPA Function](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/05-spa-function-test.png)
 
 Chỉ gắn Function với **Default (*)**, không gắn với `/api/*`. Mã giữ nguyên `/assets/...`, `/images/...` và các URL file thật. Khi Frontend đã được upload tại 5.7.3, đường dẫn `/san-pham/21/21` sẽ hiển thị giao diện chi tiết sản phẩm thay vì XML `AccessDenied` từ S3.
 

@@ -244,7 +244,7 @@ Verify the ordered behaviors:
 | `0` | `/api/*` | `techvina-ec2-backend` |
 | `1` | `Default (*)` | Frontend S3 + images |
 
-![TechVina cache behavior precedence](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/04-cloudfront-behaviors-actual.png)
+![TechVina cache behavior precedence](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/04-cloudfront-behaviors-actual.png)
 
 Test:
 
@@ -291,7 +291,7 @@ function handler(event) {
 4. Choose **Add association**, select the TechVina distribution, **Event type = Viewer request**, and **Cache behavior = Default (*)**. If a replacement warning appears, first inspect **Behaviors → Default (*) → Edit → Function associations** to check for an existing function.
 5. Choose **Add association** and allow the distribution configuration to deploy.
 
-![Successful SPA Function test](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/05-spa-function-test.png)
+![Successful SPA Function test](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.1-CloudFront/05-spa-function-test.png)
 
 Associate the function only with **Default (*)**, not `/api/*`. The function preserves `/assets/...`, `/images/...` and actual file URLs. Once the frontend is uploaded in 5.7.3, `/san-pham/21/21` can render the product page instead of S3's XML `AccessDenied` response.
 

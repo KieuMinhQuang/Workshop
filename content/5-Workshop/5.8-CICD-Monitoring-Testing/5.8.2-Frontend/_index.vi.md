@@ -50,7 +50,7 @@ GitHub Actions sẽ sử dụng `frontend/package-lock.json` để cài đặt c
 | `VITE_COGNITO_REDIRECT_URI` | `https://<CLOUDFRONT_DOMAIN>/` |
 | `VITE_COGNITO_LOGOUT_URI` | `https://<CLOUDFRONT_DOMAIN>/` |
 
-![Sáu Repository Variables dùng để build Frontend trên GitHub Actions](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/01-github-variables.png)
+![Sáu Repository Variables dùng để build Frontend trên GitHub Actions](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/01-github-variables.png)
 
 Địa chỉ CloudFront phải trùng với địa chỉ đã cấu hình trong Cognito App Client. Các biến `VITE_*` được đưa vào bản build chạy trên trình duyệt, vì vậy không lưu AWS Access Key, mật khẩu cơ sở dữ liệu hoặc thông tin bí mật tại đây.
 
@@ -167,7 +167,7 @@ Status: Success
 Total duration: 34s
 ```
 
-![GitHub Actions Frontend chạy thành công sau khi cấu hình OIDC](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/02-frontend-actions-success.png)
+![GitHub Actions Frontend chạy thành công sau khi cấu hình OIDC](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/02-frontend-actions-success.png)
 
 Kiểm tra trong job các bước `Install dependencies`, `Build Frontend`, `Configure AWS credentials`, `Deploy to Amazon S3` và `Invalidate CloudFront cache` đều hoàn thành. Nếu bước xác thực AWS thất bại, đối chiếu IAM Trust Policy và OIDC `sub` theo mục **5.8.1**.
 
@@ -178,8 +178,8 @@ Kiểm tra trong job các bước `Install dependencies`, `Build Frontend`, `Con
 3. Truy cập website thông qua tên miền CloudFront đã cấu hình ở **5.7.1**.
 4. Kiểm tra trang chủ, banner, danh mục và danh sách sản phẩm nổi bật. Dữ liệu sản phẩm vẫn được tải từ Spring Boot Backend thông qua đường dẫn API của CloudFront.
 
-![Trang chủ TechVina sau khi triển khai tự động Frontend](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/03-frontend-homepage.png)
+![Trang chủ TechVina sau khi triển khai tự động Frontend](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/03-frontend-homepage.png)
 
-![Danh mục và các sản phẩm nổi bật hiển thị trên website](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/04-frontend-products.png)
+![Danh mục và các sản phẩm nổi bật hiển thị trên website](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/04-frontend-products.png)
 
 Kết quả kiểm thử thực tế: GitHub Actions trả về **Success**, website qua CloudFront hiển thị giao diện, ảnh sản phẩm và dữ liệu sản phẩm. Pipeline Frontend đã triển khai thành công, không làm mất nội dung hình ảnh thuộc `images/` trên S3.

@@ -75,7 +75,7 @@ In **VPC → Security groups**, confirm that both security groups belong to `tec
 | `techvina-ec2-sg` | TCP `80` from `0.0.0.0/0`; TCP `443` from the CloudFront origin-facing prefix list | `All traffic` |
 | `techvina-rds-sg` | TCP `3306` from `techvina-ec2-sg` | `All traffic` |
 
-![TechVina security groups](/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/01-security-groups.png)
+![TechVina security groups](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/01-security-groups.png)
 
 ## Step 2 – Create the EC2 IAM Role
 
@@ -151,7 +151,7 @@ Open **IAM → Roles → `techvina-ec2-ssm-role` → Permissions** and verify:
 | Inline | `techvina-ec2-backend-s3-read-policy` |
 | Inline | `techvina-frontend-s3-upload` |
 
-![IAM instance role for EC2](/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/02-instance-role.png)
+![IAM instance role for EC2](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/02-instance-role.png)
 
 ## Step 3 – Validate
 

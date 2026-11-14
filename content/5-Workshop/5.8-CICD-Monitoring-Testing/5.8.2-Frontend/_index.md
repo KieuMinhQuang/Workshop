@@ -50,7 +50,7 @@ GitHub Actions uses `frontend/package-lock.json` to install pinned dependencies 
 | `VITE_COGNITO_REDIRECT_URI` | `https://<CLOUDFRONT_DOMAIN>/` |
 | `VITE_COGNITO_LOGOUT_URI` | `https://<CLOUDFRONT_DOMAIN>/` |
 
-![Six repository variables used by the GitHub Actions Frontend build](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/01-github-variables.png)
+![Six repository variables used by the GitHub Actions Frontend build](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/01-github-variables.png)
 
 The CloudFront address must match the callback configuration of the Cognito App Client. Values prefixed with `VITE_*` become part of browser-side JavaScript; do not store AWS Access Keys, database passwords, or other secrets in these variables.
 
@@ -167,7 +167,7 @@ Status: Success
 Total duration: 34s
 ```
 
-![The Frontend workflow completed successfully after the OIDC configuration was corrected](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/02-frontend-actions-success.png)
+![The Frontend workflow completed successfully after the OIDC configuration was corrected](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/02-frontend-actions-success.png)
 
 Verify that `Install dependencies`, `Build Frontend`, `Configure AWS credentials`, `Deploy to Amazon S3`, and `Invalidate CloudFront cache` all complete. If AWS authentication fails, verify the IAM Trust Policy and actual OIDC `sub` as documented in **5.8.1**.
 
@@ -178,8 +178,8 @@ Verify that `Install dependencies`, `Build Frontend`, `Configure AWS credentials
 3. Open the website using the CloudFront domain configured in **5.7.1**.
 4. Verify the homepage, banner, categories, and featured product list. Product data continues to load from Spring Boot through the CloudFront API path.
 
-![TechVina homepage after automated Frontend deployment](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/03-frontend-homepage.png)
+![TechVina homepage after automated Frontend deployment](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/03-frontend-homepage.png)
 
-![Categories and featured products displayed on the website](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/04-frontend-products.png)
+![Categories and featured products displayed on the website](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.2-Frontend/04-frontend-products.png)
 
 Observed result: The GitHub Actions run completed with **Success**, and the CloudFront website displayed the Frontend, product images, and product data. The deployment preserved the image objects under the S3 `images/` prefix.

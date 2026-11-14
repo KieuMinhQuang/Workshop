@@ -191,9 +191,9 @@ Verify the banner, categories, and **four featured products**. Under **F12 → N
 
 If requests appear as `//api/...` with `401`, remove the trailing slash from `VITE_API_BASE_URL`, then **rebuild → sync to S3 → invalidate**. If a client-side route returns S3 XML `AccessDenied`, verify `techvina-spa-routing` in **5.7.1** is associated with **Default (*) → Viewer request**.
 
-![TechVina storefront with categories and products](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/03-frontend-products-actual.png)
+![TechVina storefront with categories and products](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/03-frontend-products-actual.png)
 
-![Xiaomi 15 product details rendered by React Router](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/04-product-detail-actual.png)
+![Xiaomi 15 product details rendered by React Router](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/04-product-detail-actual.png)
 
 ## Step 8 – Test Cognito sign-in, ADMIN role, and sign-out
 
@@ -203,6 +203,6 @@ If requests appear as `//api/...` with `401`, remove the trailing slash from `VI
 4. Choose **Đăng xuất**. The website returns to a signed-out state, showing **Tài khoản** in the navigation.
 5. Choose **Đăng nhập với Amazon Cognito** again and confirm Cognito displays **Sign in** rather than automatically restoring the previous ADMIN session.
 
-![Amazon Cognito sign-in page](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/05-cognito-signin-actual.png)
+![Amazon Cognito sign-in page](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/05-cognito-signin-actual.png)
 
 Do not include passwords, authorization codes, tokens, or callback URLs containing a `code` parameter in documentation or screenshots. Seeing the ADMIN role in the frontend confirms authentication and role display, but is not a substitute for authorization tests on protected API operations.

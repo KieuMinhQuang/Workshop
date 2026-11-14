@@ -18,7 +18,7 @@ pre: "<b>5.8.1.</b> "
 
 4. Chọn **Add provider**. Trong danh sách **Identity providers**, kiểm tra provider `token.actions.githubusercontent.com` có loại **OpenID Connect**.
 
-![GitHub OIDC Identity Provider được tạo trên AWS IAM](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/01-oidc-provider.png)
+![GitHub OIDC Identity Provider được tạo trên AWS IAM](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/01-oidc-provider.png)
 
 ## Step 2 – Tạo hai IAM Roles cho GitHub Actions
 
@@ -33,7 +33,7 @@ pre: "<b>5.8.1.</b> "
 
 4. Mở từng Role, chọn **Trust relationships → Edit trust policy** để cấu hình giới hạn quyền sử dụng theo repository và nhánh GitHub.
 
-![IAM Role dành cho GitHub Actions Frontend được tạo thành công](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/02-github-roles.png)
+![IAM Role dành cho GitHub Actions Frontend được tạo thành công](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/02-github-roles.png)
 
 ## Step 3 – Cấu hình Trust Policy theo GitHub OIDC Subject
 
@@ -70,7 +70,7 @@ Trong repository **TechVina**, branch triển khai là `master`. Điều kiện 
 
 Đối chiếu giá trị `sub` với claim thực tế từ GitHub Actions. Với repository phát hành OIDC theo định dạng cũ, giá trị `sub` có thể không chứa các ID; dùng đúng claim thực tế thay vì sao chép máy móc một mẫu khác.
 
-![Trust Policy của IAM Backend Role được cấu hình theo OIDC Subject thực tế](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/03-backend-trust-policy.png)
+![Trust Policy của IAM Backend Role được cấu hình theo OIDC Subject thực tế](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/03-backend-trust-policy.png)
 
 Chọn **Update policy** để lưu, thực hiện tương tự với IAM Role Frontend.
 
@@ -145,7 +145,7 @@ Chọn **Update policy** để lưu, thực hiện tương tự với IAM Role F
 
 4. Đặt tên Inline Policy là `techvina-github-actions-backend-policy`, sau đó lưu. Quyền `ssm:SendCommand` được giới hạn cho tài liệu `AWS-RunShellScript` và EC2 Backend đã chọn.
 
-![Inline Policy của IAM Role Backend được tạo thành công](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/04-backend-inline-policy.png)
+![Inline Policy của IAM Role Backend được tạo thành công](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/04-backend-inline-policy.png)
 
 ## Step 6 – Cấp quyền đọc Artifacts cho IAM Role của EC2
 

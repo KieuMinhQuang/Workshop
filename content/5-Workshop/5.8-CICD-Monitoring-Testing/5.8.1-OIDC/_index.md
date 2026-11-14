@@ -18,7 +18,7 @@ pre: "<b>5.8.1.</b> "
 
 4. Select **Add provider**. Under **Identity providers**, verify that `token.actions.githubusercontent.com` appears with type **OpenID Connect**.
 
-![GitHub OIDC identity provider created in AWS IAM](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/01-oidc-provider.png)
+![GitHub OIDC identity provider created in AWS IAM](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/01-oidc-provider.png)
 
 ## Step 2 – Create Two GitHub Actions IAM Roles
 
@@ -33,7 +33,7 @@ pre: "<b>5.8.1.</b> "
 
 4. Open each role and choose **Trust relationships → Edit trust policy** to restrict access to the intended GitHub repository and branch.
 
-![IAM role for the GitHub Actions Frontend created successfully](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/02-github-roles.png)
+![IAM role for the GitHub Actions Frontend created successfully](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/02-github-roles.png)
 
 ## Step 3 – Configure the Trust Policy Using the GitHub OIDC Subject
 
@@ -70,7 +70,7 @@ The TechVina deployment branch is `master`. The `StringEquals` conditions restri
 
 Match the `sub` condition to the actual claim emitted by GitHub Actions. Older repositories may emit the earlier subject format without immutable IDs; the trust policy must use the value that the repository actually issues.
 
-![Backend IAM role trust policy configured with the actual OIDC subject format](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/03-backend-trust-policy.png)
+![Backend IAM role trust policy configured with the actual OIDC subject format](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/03-backend-trust-policy.png)
 
 Select **Update policy**, and repeat for the Frontend IAM role.
 
@@ -145,7 +145,7 @@ Select **Update policy**, and repeat for the Frontend IAM role.
 
 4. Name the inline policy `techvina-github-actions-backend-policy` and save it. The `ssm:SendCommand` permission is restricted to the `AWS-RunShellScript` document and the designated Backend EC2 instance.
 
-![Inline policy created for the Backend IAM role](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/04-backend-inline-policy.png)
+![Inline policy created for the Backend IAM role](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.1-OIDC/04-backend-inline-policy.png)
 
 ## Step 6 – Grant Artifact Read Permissions to the EC2 IAM Role
 

@@ -37,19 +37,19 @@ techvina-backend-artifacts-<AWS_ACCOUNT_ID>
 
 Nhấn **Create bucket**. Bucket này lưu JAR và các tệp phục vụ CI/CD dưới tiền tố `releases/`. Tên phải khớp với ARN `s3:GetObject` đã cấp cho EC2 Role tại mục 5.3.2.
 
-![Hai bucket S3 của TechVina](/images/5-Workshop/5.6-S3/5.6.1-Buckets/01-two-buckets.png)
+![Hai bucket S3 của TechVina](/Workshop/images/5-Workshop/5.6-S3/5.6.1-Buckets/01-two-buckets.png)
 
 ## Step 4 – Tạo tiền tố images trong bucket Frontend
 
 Mở **`techvina-frontend-<AWS_ACCOUNT_ID>` → Objects → Create folder**. Nhập **Folder name** là `images` (không thêm `/`), chọn **Don't specify an encryption key** để dùng SSE-S3 mặc định, rồi nhấn **Create folder**.
 
-![Tiền tố images trong bucket Frontend](/images/5-Workshop/5.6-S3/5.6.1-Buckets/02-images-folder.png)
+![Tiền tố images trong bucket Frontend](/Workshop/images/5-Workshop/5.6-S3/5.6.1-Buckets/02-images-folder.png)
 
 ## Step 5 – Tạo tiền tố releases trong bucket Backend Artifacts
 
 Mở **`techvina-backend-artifacts-<AWS_ACCOUNT_ID>` → Objects → Create folder**. Nhập **Folder name** là `releases`, giữ tùy chọn mã hóa mặc định và nhấn **Create folder**.
 
-![Tiền tố releases trong bucket Backend Artifacts](/images/5-Workshop/5.6-S3/5.6.1-Buckets/03-releases-folder.png)
+![Tiền tố releases trong bucket Backend Artifacts](/Workshop/images/5-Workshop/5.6-S3/5.6.1-Buckets/03-releases-folder.png)
 
 ## Step 6 – Kiểm tra kết quả
 

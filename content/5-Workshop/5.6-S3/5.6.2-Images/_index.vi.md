@@ -37,7 +37,7 @@ Các bản ghi trong cơ sở dữ liệu `phone_store` lưu đường dẫn ả
 
 Trong lần triển khai TechVina đã thực hiện, kết quả là **66 file, tổng dung lượng 2,4 MB, không có file lỗi**.
 
-![Kết quả tải 66 hình ảnh lên bucket Frontend](/images/5-Workshop/5.6-S3/5.6.2-Images/03-images-upload-success.png)
+![Kết quả tải 66 hình ảnh lên bucket Frontend](/Workshop/images/5-Workshop/5.6-S3/5.6.2-Images/03-images-upload-success.png)
 
 ## Step 3 – Kiểm tra đối tượng S3
 

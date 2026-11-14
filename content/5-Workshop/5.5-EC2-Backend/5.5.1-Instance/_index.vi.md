@@ -79,7 +79,7 @@ pre: "<b>5.5.1.</b> "
 4. Mở **EC2 → Instances**. Chọn `techvina-ec2-backend`; đợi **Instance state = Running** và **Status check = 2/2 checks passed**.
 5. Ghi lại **Instance ID**, **Public IPv4 address** và **Public IPv4 DNS** trong trang chi tiết EC2 để cấu hình triển khai ở các mục tiếp theo.
 
-![EC2 Backend được tạo trên AWS](/images/5-Workshop/5.5-EC2-Backend/5.5.1-Instance/01-launch-ec2.png)
+![EC2 Backend được tạo trên AWS](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.1-Instance/01-launch-ec2.png)
 
 ## Step 2 – Kết nối EC2 và cài công cụ
 

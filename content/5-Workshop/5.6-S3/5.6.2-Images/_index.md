@@ -37,7 +37,7 @@ The matching S3 object key must be `images/products/xiaomi/xiaomi-series/xiaomi-
 
 The actual TechVina deployment uploaded **66 files totaling 2.4 MB, with no failed files**.
 
-![Successful upload of 66 images to the frontend bucket](/images/5-Workshop/5.6-S3/5.6.2-Images/03-images-upload-success.png)
+![Successful upload of 66 images to the frontend bucket](/Workshop/images/5-Workshop/5.6-S3/5.6.2-Images/03-images-upload-success.png)
 
 ## Step 3 – Verify S3 object keys
 

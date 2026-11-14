@@ -647,7 +647,7 @@ This push triggers the Backend deployment workflow. When its deploy step runs, i
 
 Actual deployment result: **Success – 1 minute 28 seconds**.
 
-![Successful Backend workflow run in GitHub Actions](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/01-backend-actions-success.png)
+![Successful Backend workflow run in GitHub Actions](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/01-backend-actions-success.png)
 
 **Actual SSM and deployment script output (excerpt):**
 
@@ -664,7 +664,7 @@ Cleaning up old Backend backups...
 Backup cleanup completed
 ```
 
-![SSM deployment result with Success status and response code 0](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/02-ssm-deploy-success.png)
+![SSM deployment result with Success status and response code 0](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/02-ssm-deploy-success.png)
 
 The backup file was created before the live JAR was replaced. Spring Boot subsequently restarted and returned `{"status":"UP"}`. The `DEPLOY SUCCESS` output confirms that this release succeeded without entering rollback.
 
@@ -684,6 +684,6 @@ active
 
 Open the website through CloudFront, browse the product list and open a product detail page. During the TechVina verification, the Xiaomi 15 page loaded product details, variants, colors, images and inventory information from the application.
 
-![Product details remain available through the Backend API after deployment](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/03-backend-product-detail.png)
+![Product details remain available through the Backend API after deployment](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/03-backend-product-detail.png)
 
 The GitHub Actions pipeline built the JAR with Maven, uploaded the artifacts to S3, sent the SSM command to EC2, created a backup, replaced the JAR, restarted Spring Boot and passed its health check. The website and product data remained accessible after deployment.

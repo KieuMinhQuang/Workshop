@@ -75,7 +75,7 @@ Trong **VPC → Security groups**, xác nhận có hai Security Group thuộc `t
 | `techvina-ec2-sg` | TCP `80` từ `0.0.0.0/0`; TCP `443` từ CloudFront origin-facing prefix list | `All traffic` |
 | `techvina-rds-sg` | TCP `3306` từ `techvina-ec2-sg` | `All traffic` |
 
-![Hai Security Group của TechVina](/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/01-security-groups.png)
+![Hai Security Group của TechVina](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/01-security-groups.png)
 
 ## Step 2 – Tạo IAM Role cho EC2
 
@@ -151,7 +151,7 @@ Mở **IAM → Roles → `techvina-ec2-ssm-role` → Permissions** và xác nh�
 | Inline | `techvina-ec2-backend-s3-read-policy` |
 | Inline | `techvina-frontend-s3-upload` |
 
-![IAM Instance Role cho EC2](/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/02-instance-role.png)
+![IAM Instance Role cho EC2](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.2-Security-IAM/02-instance-role.png)
 
 ## Step 3 – Kiểm tra
 

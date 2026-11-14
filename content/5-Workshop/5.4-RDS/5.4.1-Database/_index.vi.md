@@ -58,7 +58,7 @@ Thông báo *“For Multi-AZ DB clusters, you must select 3 subnets in 3 differe
 2. Trong danh sách **RDS → Subnet groups**, chọn `techvina-db-subnet-group`.
 3. Kiểm tra nhóm thuộc `techvina-vpc` và có hai Subnet `techvina-private-a`, `techvina-private-b`.
 
-![DB Subnet Group sử dụng hai Private Subnet của TechVina](/images/5-Workshop/5.4-RDS/5.4.1-Database/01-db-subnet-group.png)
+![DB Subnet Group sử dụng hai Private Subnet của TechVina](/Workshop/images/5-Workshop/5.4-RDS/5.4.1-Database/01-db-subnet-group.png)
 ## Step 2 – Tạo Amazon RDS MySQL
 
 ### Step 2.1 – Mở trang Create database
@@ -171,7 +171,7 @@ Giữ **Capacity reservations** ở **No capacity reservations**. Không cần t
 3. Nhấn **Create database**.
 4. Trong **Aurora and RDS → Databases**, mở `techvina-mysql` và kiểm tra **Status = Available**.
 
-![Amazon RDS MySQL đã được tạo](/images/5-Workshop/5.4-RDS/5.4.1-Database/02-rds-created.png)
+![Amazon RDS MySQL đã được tạo](/Workshop/images/5-Workshop/5.4-RDS/5.4.1-Database/02-rds-created.png)
 
 ## Step 3 – Ghi thông tin kết nối
 

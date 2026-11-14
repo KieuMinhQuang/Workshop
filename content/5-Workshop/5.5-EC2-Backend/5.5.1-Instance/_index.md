@@ -79,7 +79,7 @@ pre: "<b>5.5.1.</b> "
 4. Open **EC2 → Instances** and select `techvina-ec2-backend`. Wait for **Instance state = Running** and **Status check = 2/2 checks passed**.
 5. Record the **Instance ID**, **Public IPv4 address** and **Public IPv4 DNS** from the instance details; they will be used in later deployment steps.
 
-![Backend EC2 instance created in AWS](/images/5-Workshop/5.5-EC2-Backend/5.5.1-Instance/01-launch-ec2.png)
+![Backend EC2 instance created in AWS](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.1-Instance/01-launch-ec2.png)
 
 ## Step 2 – Connect to EC2 and install tools
 

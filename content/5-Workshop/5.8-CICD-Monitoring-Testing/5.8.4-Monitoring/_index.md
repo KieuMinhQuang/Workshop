@@ -171,9 +171,9 @@ Restarting briefly interrupts the Backend during application startup, but does n
 3. Select the log stream named after the `techvina-ec2-backend` Instance ID.
 4. Open **Log events** and inspect entries from Hibernate, JPA, Tomcat and Spring Boot startup.
 
-![CloudWatch log group for the Spring Boot Backend](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/01-cloudwatch-log-group.png)
+![CloudWatch log group for the Spring Boot Backend](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/01-cloudwatch-log-group.png)
 
-![Spring Boot startup events collected in CloudWatch Logs](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/02-cloudwatch-log-events.png)
+![Spring Boot startup events collected in CloudWatch Logs](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/02-cloudwatch-log-events.png)
 
 The received events include `Initialized JPA EntityManagerFactory`, `Tomcat started on port 8080` and `Started BackendApplication`. This confirms the **EC2 → journald → CloudWatch Agent → CloudWatch Logs** collection path.
 
@@ -184,7 +184,7 @@ The received events include `Initialized JPA EntityManagerFactory`, `Tomcat star
 3. Locate the instance by its `InstanceId` and `techvina-ec2-backend` name.
 4. Select **`CPUUtilization`** and display the graph over **3h**.
 
-![EC2 Backend CPUUtilization chart in CloudWatch Metrics](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/03-cloudwatch-cpu-metric.png)
+![EC2 Backend CPUUtilization chart in CloudWatch Metrics](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/03-cloudwatch-cpu-metric.png)
 
 The chart shows the instance's actual CPU usage, including a brief rise near the end of the selected period. The **Per-Instance Metrics** page also provides `StatusCheckFailed`, `NetworkIn`, `NetworkOut` and `CPUCreditBalance` for the T3 EC2 instance.
 
@@ -207,7 +207,7 @@ With the `CPUUtilization` metric selected, choose **Create alarm** and configure
 
 Both consecutive 5-minute averages must exceed 70% for the alarm to transition to `ALARM`.
 
-![CPU threshold and notification action in CloudWatch Alarm preview](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/04-cloudwatch-alarm-conditions.png)
+![CPU threshold and notification action in CloudWatch Alarm preview](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/04-cloudwatch-alarm-conditions.png)
 
 Under **Configure actions → Notification**:
 
@@ -225,13 +225,13 @@ Monitor CPU utilization of the TechVina Backend EC2 instance. Trigger an alarm w
 
 Open **Amazon SNS → Topics → `techvina-backend-cpu-alerts`** and verify that the email subscription has **Confirmed** status and uses the **EMAIL** protocol.
 
-![SNS topic and confirmed email subscription](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/06-sns-topic-confirmed.png)
+![SNS topic and confirmed email subscription](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/06-sns-topic-confirmed.png)
 
 ## Step 7 – Verify the Alarm state and test SNS email delivery
 
 After creation, `techvina-backend-high-cpu` initially displayed `Insufficient data`, then changed to **`OK`** once enough CPU datapoints were evaluated. On the **Actions** tab, the configuration shows `Actions enabled` and a notification sent to `techvina-backend-cpu-alerts` when the alarm enters the `ALARM` state.
 
-![CloudWatch Alarm in OK state with its SNS notification action enabled](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/05-cloudwatch-alarm-ok-actions.png)
+![CloudWatch Alarm in OK state with its SNS notification action enabled](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/05-cloudwatch-alarm-ok-actions.png)
 
 To test email delivery without increasing EC2 CPU load:
 
@@ -258,7 +258,7 @@ Result: Testing email notification delivery.
 
 4. Select **Publish message** and open the subscribed mailbox. The test message was successfully delivered by **AWS Notifications**.
 
-![Successfully delivered SNS test email](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/07-sns-test-email.png)
+![Successfully delivered SNS test email](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/07-sns-test-email.png)
 
 This test verifies **SNS email delivery to a confirmed subscription**. It does not test a real CPU threshold breach or an actual transition into `ALARM`.
 

@@ -22,7 +22,7 @@ In **Define your application**, choose:
 
 The TechVina React frontend runs in browsers and therefore uses a **public client**, without a client secret.
 
-![Choose SPA for TechVina](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/01-cognito-user-pool.png)
+![Choose SPA for TechVina](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/01-cognito-user-pool.png)
 
 ## Step 3 – Configure sign-up and sign-in
 
@@ -59,7 +59,7 @@ Open **Applications → App clients → techvina-frontend**. The wizard already 
 
 Record the **Client ID** for the backend and frontend configuration in later sections.
 
-![App client details without a client secret](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/02-cognito-client.png)
+![App client details without a client secret](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/02-cognito-client.png)
 
 ## Step 6 – Verify the Cognito domain
 
@@ -80,7 +80,7 @@ The JWT issuer URL is derived from the user pool ID:
 https://cognito-idp.ap-southeast-1.amazonaws.com/<USER_POOL_ID>
 ```
 
-![Cognito Domain and issuer](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/03-cognito-domain.png)
+![Cognito Domain and issuer](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/03-cognito-domain.png)
 
 ## Step 7 – Configure managed login and callback URL
 
@@ -101,7 +101,7 @@ If AWS has prefilled a CloudFront URL that does not belong to this deployment, r
 
 These scopes match `scope: "openid email phone"` in `frontend/src/services/authConfig.js`. The SPA uses Authorization Code Flow with PKCE. Configure the deployed CloudFront HTTPS URL and sign-out URL later in **5.7.2**.
 
-![Managed login OAuth settings and callback URL](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/04-cognito-login-pages.png)
+![Managed login OAuth settings and callback URL](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/04-cognito-login-pages.png)
 
 ## Step 8 – Create Cognito groups
 
@@ -115,7 +115,7 @@ Under **User management → Groups**, select **Create group** and create:
 
 Use the exact uppercase names. In `backend/src/main/java/com/phoneshop/config/CognitoRoleConfig.java`, the `cognito:groups` claim is mapped to `ROLE_ADMIN`, `ROLE_STAFF`, and `ROLE_CUSTOMER`.
 
-![The three Cognito groups](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/05-cognito-groups.png)
+![The three Cognito groups](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/05-cognito-groups.png)
 
 ## Step 9 – Create an ADMIN account
 
@@ -141,7 +141,7 @@ The new account initially shows **Status: Enabled** and **Confirmation status: F
 3. On **Change password**, set and confirm a new password that meets the pool's password policy.
 4. Return to **Cognito → Users** and select **Refresh**. The account changes to **Confirmation status: Confirmed** and remains **Enabled**.
 
-![Cognito managed sign-in page](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/07-cognito-login-page.png)
+![Cognito managed sign-in page](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/07-cognito-login-page.png)
 
 After the password change, Cognito redirects to `http://localhost:5173/?code=...`. The browser may report `ERR_CONNECTION_REFUSED` because the frontend is not running on localhost. This does not indicate a failed password change. The `code` value is an authorization code, not an access token; no token exchange occurs while the frontend is unavailable.
 
@@ -153,7 +153,7 @@ During account creation, the email may initially remain **Not verified** even af
 2. After confirming you control the mailbox, check **Mark email address as verified**.
 3. Save and verify **Verified**. The account remains in the `ADMIN` group.
 
-![Verified email and ADMIN group](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/06-cognito-admin-verified.png)
+![Verified email and ADMIN group](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/06-cognito-admin-verified.png)
 
 ## Step 13 – Verify email confirmation for self-registration
 
@@ -168,7 +168,7 @@ Open **Authentication → Sign-up** and check:
 
 Cognito is configured to send email verification messages to new self-registered users.
 
-![Sign-up email verification settings](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/08-cognito-email-verification.png)
+![Sign-up email verification settings](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/08-cognito-email-verification.png)
 
 ## Step 14 – Check password policy and MFA
 
@@ -180,11 +180,11 @@ Under **Authentication → Authentication methods → Password policy**:
 | Password requirements | Uppercase, lowercase, number, special character |
 | Temporary password expiry | 7 days |
 
-![Cognito password policy](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/09-cognito-password-policy.png)
+![Cognito password policy](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/09-cognito-password-policy.png)
 
 Under **Authentication → Sign-in → Multi-factor authentication**, the observed configuration is **No MFA**. Keep this setting for this deployment and select **Cancel** after inspection.
 
-![MFA set to No MFA](/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/10-cognito-mfa.png)
+![MFA set to No MFA](/Workshop/images/5-Workshop/5.5-EC2-Backend/5.5.2-Cognito-Bootstrap/10-cognito-mfa.png)
 
 ## Step 15 – Cognito values for the backend
 

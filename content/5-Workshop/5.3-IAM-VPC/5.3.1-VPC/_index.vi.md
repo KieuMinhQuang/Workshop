@@ -12,7 +12,7 @@ pre : " <b> 5.3.1 </b> "
 2. Chọn **VPC only**, Name `techvina-vpc`, IPv4 CIDR `10.20.0.0/16`, Tenancy `Default`.
 3. Nhấn **Create VPC**. Mở **Actions → Edit VPC settings**, bật **DNS resolution** và **DNS hostnames**.
 
-![VPC và các mạng con](/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/01-vpc-create.png)
+![VPC và các mạng con](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/01-vpc-create.png)
 
 ## Step 2 – Tạo ba subnet
 
@@ -26,7 +26,7 @@ Trong **VPC → Subnets → Create subnet**, chọn `techvina-vpc` và tạo:
 
 Chọn public subnet → **Actions → Edit subnet settings** → bật **Enable auto-assign public IPv4 address**. Private subnets để tắt.
 
-![Danh sách ba Subnet trong VPC TechVina](/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/02-subnets.png)
+![Danh sách ba Subnet trong VPC TechVina](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/02-subnets.png)
 
 ## Step 3 – Internet Gateway và Route Tables
 
@@ -36,7 +36,7 @@ Chọn public subnet → **Actions → Edit subnet settings** → bật **Enable
 4. Trong **Subnet associations → Edit**, liên kết `techvina-public-a`.
 5. Tạo route table thứ hai `techvina-private-rt` và liên kết `techvina-private-a`, `techvina-private-b`. Giữ route nội bộ `10.20.0.0/16 → local`; không thêm tuyến ra Internet cho hai private subnets.
 
-![Cấu hình bảng định tuyến và Internet Gateway](/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/03-route-table.png)
+![Cấu hình bảng định tuyến và Internet Gateway](/Workshop/images/5-Workshop/5.3-IAM-VPC/5.3.1-VPC/03-route-table.png)
 
 ## Step 4 – Xác minh
 

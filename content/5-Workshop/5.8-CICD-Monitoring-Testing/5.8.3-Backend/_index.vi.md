@@ -647,7 +647,7 @@ Lệnh push sẽ kích hoạt workflow Backend và **thay thế JAR trên EC2, k
 
 Kết quả triển khai thực tế: **Success – 1 phút 28 giây**.
 
-![Workflow Backend hoàn thành thành công trên GitHub Actions](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/01-backend-actions-success.png)
+![Workflow Backend hoàn thành thành công trên GitHub Actions](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/01-backend-actions-success.png)
 
 **Trích kết quả thực tế của SSM và script triển khai:**
 
@@ -664,7 +664,7 @@ Cleaning up old Backend backups...
 Backup cleanup completed
 ```
 
-![Lệnh triển khai Backend qua SSM trả về Success và ResponseCode 0](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/02-ssm-deploy-success.png)
+![Lệnh triển khai Backend qua SSM trả về Success và ResponseCode 0](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/02-ssm-deploy-success.png)
 
 Đường dẫn backup được tạo trước khi script thay thế JAR, sau đó dịch vụ Spring Boot đã khởi động và trả về `{"status":"UP"}`. Kết quả `DEPLOY SUCCESS` xác nhận lần triển khai này thành công; không kích hoạt nhánh rollback.
 
@@ -684,6 +684,6 @@ active
 
 Truy cập CloudFront, mở danh sách sản phẩm, sau đó vào trang chi tiết sản phẩm. Trong lần kiểm thử TechVina, trang sản phẩm tải thành công thông tin Xiaomi 15, phiên bản, màu sắc, hình ảnh và số lượng tồn kho từ hệ thống.
 
-![Trang chi tiết sản phẩm tải được dữ liệu từ Backend sau CI/CD](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/03-backend-product-detail.png)
+![Trang chi tiết sản phẩm tải được dữ liệu từ Backend sau CI/CD](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.3-Backend/03-backend-product-detail.png)
 
 Kết quả: GitHub Actions đã build JAR bằng Maven, upload artifacts lên S3, gửi lệnh SSM đến EC2, tạo backup, thay JAR, khởi động lại Spring Boot và hoàn thành Health Check. Luồng truy cập website và dữ liệu sản phẩm vẫn hoạt động sau triển khai.

@@ -16,7 +16,7 @@ pre : " <b> 5.4.2 </b> "
 
 **Kết quả mong đợi:** File `database/full/phone_store.sql` tồn tại trong repository và chứa cấu trúc cùng dữ liệu mẫu của database `phone_store`.
 
-![File SQL nguồn trong TechVina](/images/5-Workshop/5.4-RDS/5.4.2-Import/01-sql-source.png)
+![File SQL nguồn trong TechVina](/Workshop/images/5-Workshop/5.4-RDS/5.4.2-Import/01-sql-source.png)
 
 ## Step 2 – Lấy thông tin kết nối Amazon RDS
 

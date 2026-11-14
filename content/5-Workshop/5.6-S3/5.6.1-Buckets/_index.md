@@ -37,19 +37,19 @@ techvina-backend-artifacts-<AWS_ACCOUNT_ID>
 
 Select **Create bucket**. This bucket will store JAR files and CI/CD artifacts under `releases/`. Its name must match the `s3:GetObject` ARN attached to the EC2 Role in section 5.3.2.
 
-![Two TechVina S3 buckets](/images/5-Workshop/5.6-S3/5.6.1-Buckets/01-two-buckets.png)
+![Two TechVina S3 buckets](/Workshop/images/5-Workshop/5.6-S3/5.6.1-Buckets/01-two-buckets.png)
 
 ## Step 4 – Create the images prefix in the Frontend bucket
 
 Open **`techvina-frontend-<AWS_ACCOUNT_ID>` → Objects → Create folder**. Enter `images` as the **Folder name** (without `/`), retain **Don't specify an encryption key** to use default SSE-S3, and select **Create folder**.
 
-![Images prefix in the Frontend bucket](/images/5-Workshop/5.6-S3/5.6.1-Buckets/02-images-folder.png)
+![Images prefix in the Frontend bucket](/Workshop/images/5-Workshop/5.6-S3/5.6.1-Buckets/02-images-folder.png)
 
 ## Step 5 – Create the releases prefix in Backend Artifacts
 
 Open **`techvina-backend-artifacts-<AWS_ACCOUNT_ID>` → Objects → Create folder**. Enter `releases`, retain default encryption, and select **Create folder**.
 
-![Releases prefix in Backend Artifacts](/images/5-Workshop/5.6-S3/5.6.1-Buckets/03-releases-folder.png)
+![Releases prefix in Backend Artifacts](/Workshop/images/5-Workshop/5.6-S3/5.6.1-Buckets/03-releases-folder.png)
 
 ## Step 6 – Verify the buckets
 

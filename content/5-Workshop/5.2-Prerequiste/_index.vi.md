@@ -13,7 +13,7 @@ pre : " <b> 5.2. </b> "
 3. Chọn Region **Asia Pacific (Singapore) – `ap-southeast-1`** ở góc trên bên phải. Sử dụng Region này cho các tài nguyên theo khu vực; CloudFront là dịch vụ toàn cục.
 4. Xác nhận đúng AWS Account ID và quyền sử dụng các dịch vụ trong Region Singapore trước khi tạo tài nguyên.
 
-![Chọn Region Singapore trên AWS Console](/images/5-Workshop/5.2-Prerequisites/01-aws-region.png)
+![Chọn Region Singapore trên AWS Console](/Workshop/images/5-Workshop/5.2-Prerequisites/01-aws-region.png)
 
 ## Step 2 – Chuẩn bị repository GitHub
 
@@ -22,7 +22,7 @@ pre : " <b> 5.2. </b> "
 3. Mở repository của bạn và kiểm tra nhánh **`master`** cùng các thư mục `.github/workflows/`, `.github/scripts/`, `.github/tests/`, `backend/`, `frontend/` và `database/`.
 4. Sử dụng repository thuộc tài khoản của bạn để cấu hình GitHub Actions và GitHub OIDC ở mục **5.8**.
 
-![Repository TechVina trên GitHub](/images/5-Workshop/5.2-Prerequisites/02-github-fork.png)
+![Repository TechVina trên GitHub](/Workshop/images/5-Workshop/5.2-Prerequisites/02-github-fork.png)
 
 ## Step 3 – Cài đặt Git for Windows
 
@@ -100,4 +100,4 @@ echo "$AWS_REGION"
 
 4. Đối chiếu giá trị `Account` với AWS Account ID của tài khoản thực hành. AWS CloudShell sử dụng thông tin xác thực từ phiên AWS Console, không cần tạo AWS Access Key trên máy Windows.
 
-![Mở AWS CloudShell trên trình duyệt](/images/5-Workshop/5.2-Prerequisites/03-aws-cloudshell.png)
+![Mở AWS CloudShell trên trình duyệt](/Workshop/images/5-Workshop/5.2-Prerequisites/03-aws-cloudshell.png)

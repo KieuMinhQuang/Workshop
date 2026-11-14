@@ -191,9 +191,9 @@ Kiểm tra trang chủ hiển thị banner, danh mục nổi bật và **4 sản
 
 Nếu Network hiển thị `//api/...` và lỗi `401`, kiểm tra lại dấu `/` cuối của `VITE_API_BASE_URL`, rồi **build → sync S3 → invalidation** lần nữa. Nếu các đường dẫn React Router trả XML `AccessDenied`, kiểm tra Function `techvina-spa-routing` ở 5.7.1 đã gắn với **Default (*) → Viewer request** hay chưa.
 
-![Website TechVina hiển thị danh mục và sản phẩm](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/03-frontend-products-actual.png)
+![Website TechVina hiển thị danh mục và sản phẩm](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/03-frontend-products-actual.png)
 
-![Chi tiết sản phẩm Xiaomi 15 qua React Router](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/04-product-detail-actual.png)
+![Chi tiết sản phẩm Xiaomi 15 qua React Router](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/04-product-detail-actual.png)
 
 ## Step 8 – Kiểm thử đăng nhập, vai trò ADMIN và đăng xuất
 
@@ -203,6 +203,6 @@ Nếu Network hiển thị `//api/...` và lỗi `401`, kiểm tra lại dấu `
 4. Chọn **Đăng xuất**; website trở về trạng thái chưa đăng nhập và thanh điều hướng hiển thị **Tài khoản**.
 5. Mở lại **Đăng nhập với Amazon Cognito** để kiểm tra Cognito hiển thị màn hình **Sign in** thay vì tự động vào phiên ADMIN vừa đăng xuất.
 
-![Trang đăng nhập Amazon Cognito](/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/05-cognito-signin-actual.png)
+![Trang đăng nhập Amazon Cognito](/Workshop/images/5-Workshop/5.7-CloudFront-Cognito/5.7.3-Integration/05-cognito-signin-actual.png)
 
 Không đưa mật khẩu, mã ủy quyền, token hoặc URL callback có tham số `code` vào ảnh chụp hoặc tài liệu. Trạng thái ADMIN hiển thị trên Frontend là bằng chứng đăng nhập và nhận diện nhóm; không thay thế việc kiểm thử phân quyền các API bảo vệ khi có nhu cầu.

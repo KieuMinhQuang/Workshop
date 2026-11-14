@@ -171,9 +171,9 @@ Lệnh khởi động lại làm gián đoạn Backend trong khoảng thời gia
 3. Chọn Log Stream có tên là EC2 Instance ID của `techvina-ec2-backend`.
 4. Mở **Log events** và kiểm tra nhật ký khởi tạo Hibernate, JPA, Tomcat và Spring Boot.
 
-![CloudWatch Log Group dành cho nhật ký Backend Spring Boot](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/01-cloudwatch-log-group.png)
+![CloudWatch Log Group dành cho nhật ký Backend Spring Boot](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/01-cloudwatch-log-group.png)
 
-![CloudWatch Log events hiển thị nhật ký khởi động Spring Boot](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/02-cloudwatch-log-events.png)
+![CloudWatch Log events hiển thị nhật ký khởi động Spring Boot](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/02-cloudwatch-log-events.png)
 
 Các sự kiện đã được ghi nhận với các thông báo `Initialized JPA EntityManagerFactory`, `Tomcat started on port 8080` và `Started BackendApplication`. Điều này xác nhận đường gửi nhật ký **EC2 → journald → CloudWatch Agent → CloudWatch Logs** hoạt động.
 
@@ -184,7 +184,7 @@ Các sự kiện đã được ghi nhận với các thông báo `Initialized JP
 3. Xác định EC2 theo `InstanceId` và tên `techvina-ec2-backend`.
 4. Tích chọn **`CPUUtilization`** để hiển thị biểu đồ trong khoảng thời gian **3h**.
 
-![Biểu đồ CPUUtilization của EC2 Backend trong CloudWatch](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/03-cloudwatch-cpu-metric.png)
+![Biểu đồ CPUUtilization của EC2 Backend trong CloudWatch](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/03-cloudwatch-cpu-metric.png)
 
 CloudWatch hiển thị đường sử dụng CPU của EC2 và một đợt tăng ngắn ở cuối khoảng thời gian theo dõi. Cũng tại **Per-Instance Metrics**, có thể xem các chỉ số `StatusCheckFailed`, `NetworkIn`, `NetworkOut` và `CPUCreditBalance` của EC2 T3.
 
@@ -207,7 +207,7 @@ Từ chỉ số `CPUUtilization` đang chọn, nhấn **Create alarm**, sử d�
 
 Alarm được đặt để đánh giá **hai khoảng 5 phút liên tiếp**; nếu cả hai giá trị CPU trung bình đều vượt 70%, trạng thái chuyển sang `ALARM`.
 
-![Kiểm tra điều kiện CPU và hành động thông báo trước khi tạo CloudWatch Alarm](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/04-cloudwatch-alarm-conditions.png)
+![Kiểm tra điều kiện CPU và hành động thông báo trước khi tạo CloudWatch Alarm](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/04-cloudwatch-alarm-conditions.png)
 
 Tại **Configure actions → Notification**:
 
@@ -225,13 +225,13 @@ Monitor CPU utilization of the TechVina Backend EC2 instance. Trigger an alarm w
 
 Mở **Amazon SNS → Topics → `techvina-backend-cpu-alerts`**. Trong phần **Subscriptions**, email đã đăng ký có trạng thái **Confirmed**, giao thức **EMAIL**.
 
-![SNS Topic và subscription email đã xác nhận](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/06-sns-topic-confirmed.png)
+![SNS Topic và subscription email đã xác nhận](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/06-sns-topic-confirmed.png)
 
 ## Step 7 – Kiểm tra trạng thái Alarm và kiểm thử email SNS
 
 Sau khi tạo, Alarm `techvina-backend-high-cpu` ban đầu hiển thị `Insufficient data`, sau đó chuyển sang **`OK`** khi đã có đủ dữ liệu đánh giá. Trong tab **Actions**, AWS xác nhận `Actions enabled` và gửi thông báo tới topic `techvina-backend-cpu-alerts` khi Alarm chuyển sang trạng thái `ALARM`.
 
-![CloudWatch Alarm trạng thái OK với SNS notification action được bật](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/05-cloudwatch-alarm-ok-actions.png)
+![CloudWatch Alarm trạng thái OK với SNS notification action được bật](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/05-cloudwatch-alarm-ok-actions.png)
 
 Để kiểm tra khả năng gửi email mà không tăng tải CPU trên EC2:
 
@@ -258,7 +258,7 @@ Result: Testing email notification delivery.
 
 4. Nhấn **Publish message**, mở email đã đăng ký để xác nhận thư từ **AWS Notifications** được gửi đến thành công.
 
-![Email kiểm thử Amazon SNS đã được nhận thành công](/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/07-sns-test-email.png)
+![Email kiểm thử Amazon SNS đã được nhận thành công](/Workshop/images/5-Workshop/5.8-CICD-Monitoring-Testing/5.8.4-Monitoring/07-sns-test-email.png)
 
 Bài thử nghiệm này xác nhận **Amazon SNS có thể gửi email đến subscription**, không phải kiểm thử ngưỡng CPU thực sự gây chuyển trạng thái `ALARM`.
 

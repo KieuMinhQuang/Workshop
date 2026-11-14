@@ -58,7 +58,7 @@ The Console notice *“For Multi-AZ DB clusters, you must select 3 subnets in 3 
 2. In **RDS → Subnet groups**, open `techvina-db-subnet-group`.
 3. Confirm it belongs to `techvina-vpc` and includes `techvina-private-a` and `techvina-private-b`.
 
-![TechVina DB subnet group with two private subnets](/images/5-Workshop/5.4-RDS/5.4.1-Database/01-db-subnet-group.png)
+![TechVina DB subnet group with two private subnets](/Workshop/images/5-Workshop/5.4-RDS/5.4.1-Database/01-db-subnet-group.png)
 ## Step 2 – Create an Amazon RDS MySQL database
 
 ### Step 2.1 – Open the Create database page
@@ -171,7 +171,7 @@ Keep **Capacity reservations** set to **No capacity reservations**. Tags are opt
 3. Select **Create database**.
 4. In **Aurora and RDS → Databases**, open `techvina-mysql` and check **Status = Available**.
 
-![Created Amazon RDS MySQL database](/images/5-Workshop/5.4-RDS/5.4.1-Database/02-rds-created.png)
+![Created Amazon RDS MySQL database](/Workshop/images/5-Workshop/5.4-RDS/5.4.1-Database/02-rds-created.png)
 
 ## Step 3 – Record the connection details
 

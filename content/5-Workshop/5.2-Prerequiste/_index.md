@@ -13,7 +13,7 @@ pre : " <b> 5.2. </b> "
 3. Select **Asia Pacific (Singapore) – `ap-southeast-1`** in the Region selector. Use this Region for regional resources; CloudFront is global.
 4. Verify the AWS Account ID and service permissions in Singapore before provisioning resources.
 
-![Select the Singapore AWS Region](/images/5-Workshop/5.2-Prerequisites/01-aws-region.png)
+![Select the Singapore AWS Region](/Workshop/images/5-Workshop/5.2-Prerequisites/01-aws-region.png)
 
 ## Step 2 – Prepare the GitHub repository
 
@@ -22,7 +22,7 @@ pre : " <b> 5.2. </b> "
 3. Open your repository and verify the **`master`** branch along with `.github/workflows/`, `.github/scripts/`, `.github/tests/`, `backend/`, `frontend/`, and `database/`.
 4. Use the repository owned by your account when configuring GitHub Actions and GitHub OIDC in section **5.8**.
 
-![TechVina repository on GitHub](/images/5-Workshop/5.2-Prerequisites/02-github-fork.png)
+![TechVina repository on GitHub](/Workshop/images/5-Workshop/5.2-Prerequisites/02-github-fork.png)
 
 ## Step 3 – Install Git for Windows
 
@@ -100,4 +100,4 @@ echo "$AWS_REGION"
 
 4. Compare the `Account` value with your AWS account ID. CloudShell uses the authenticated AWS Console session, so local Windows AWS access keys are not required.
 
-![Open AWS CloudShell in the browser](/images/5-Workshop/5.2-Prerequisites/03-aws-cloudshell.png)
+![Open AWS CloudShell in the browser](/Workshop/images/5-Workshop/5.2-Prerequisites/03-aws-cloudshell.png)
