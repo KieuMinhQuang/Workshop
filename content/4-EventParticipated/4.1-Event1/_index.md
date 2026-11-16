@@ -7,117 +7,152 @@ pre: " <b> 4.1. </b> "
 ---
 
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# “AWS Community Day Vietnam 2026” – Event Summary & Takeaways
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- To share knowledge and practical experience regarding Amazon Web Services (AWS) within the field of Cloud Computing.
+- To provide updates on emerging technology trends, with a focus on Generative AI and its applications in software development.
+- To introduce solutions for security, monitoring, and cost optimization when deploying systems on AWS.
+- To exchange best practices for the design, deployment, and operation of cloud infrastructure.
+- To foster connections among students, developers, cloud engineers, and professionals within the AWS Vietnam community.
 
-### Speakers
+### List of Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+### List of Speakers
+
+1. **Hồ Việt Anh** – AWS Community Hero
+2. **Phóng Phạm** – FCAJ Program Admin
+3. **Tâm Nguyễn** – Head of Cloud Department, Cloudino
+4. **Nam Lã** – AWS Community Leader
+5. **Trần Đại Đồng** – CTO, Cloudino
+6. **Phan Tuấn Anh** – CIO, Cloudino
+7. **Kha Văn** – AWS Community Builder
+8. **Yến Trịnh** – AWS Community Builder
+9. **Dũng Lương** – AWS Student Builder
+10. **Tuấn Vũ** – AWS Community Builder
+11. **Đức Thắng** – Head of Innovation, Twendee
+12. **Quân Phạm** – AI Engineer, Cloudino
+13. **Quân Nguyễn** – AI Engineer, AWSVNUG
+14. **Hạnh Phạm** – AWS Community Builder
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### Artificial Intelligence (AI) & Agentic Software Development
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- **AI-powered development:** The application of artificial intelligence to support the software development process. - **Agentic Software Development:** Utilizing AI agents to assist with requirements analysis, planning, coding, and testing.
+- **Amazon Bedrock:** Exploring a platform for building Generative AI applications and AI agents on AWS.
+- **Enterprise AI Agents:** Discovering how to transition AI agents from the experimental phase to a production environment.
+- **AI-assisted coding:** Applying AI tools to enhance productivity and software development quality.
 
-#### Transitioning to modern application architecture – Microservices
+#### AWS Security – IAM Roles Anywhere
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- **Identity and Access Management (IAM):** Managing identities, access permissions, and resource authorization on AWS.
+- **IAM Roles Anywhere:** Enabling workloads outside of AWS to use IAM roles for accessing AWS resources via digital certificates.
+- **Hybrid Cloud Security:** Ensuring security when connecting on-premises systems with the AWS environment.
+- **Authentication & Authorization:** Distinguishing between identity verification and the granting of access permissions.
+- **Security Best Practices:** Minimizing the use of long-term access keys and applying the principle of least privilege.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Observability on AWS
 
-#### Domain-Driven Design (DDD)
+- **Observability:** The ability to monitor and evaluate the operational state of a system through operational data.
+- **Metrics:** Collecting indicators such as CPU utilization, memory usage, request counts, and response times.
+- **Logs:** Recording operational information, errors, and events occurring within an application.
+- **Distributed Tracing:** Tracking the processing of requests across multiple services.
+- **Amazon CloudWatch:** Monitoring AWS resources, collecting logs and metrics, and configuring alerts.
+- **AWS X-Ray:** Assisting in the analysis and tracing of requests within distributed applications.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### Datadog – Observability with AWS
 
-#### Event-Driven Architecture
+- **Infrastructure Monitoring:** Tracking the operational health of cloud infrastructure.
+- **Application Performance Monitoring (APM):** Monitoring application performance and response times.
+- **Centralized Monitoring:** Consolidating monitoring data from various system components.
+- **Incident Detection:** Identifying anomalies and supporting incident resolution.
+- **CloudWatch vs. Datadog:** Understanding the differences between AWS’s native monitoring tool and a third-party monitoring platform.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+#### Cloud Computing & Cost Optimization
 
-#### Compute Evolution
+- **AWS Infrastructure:** Understanding how cloud services are utilized to build and operate systems.
+- **Resource Monitoring:** Tracking resource usage to prevent waste.
+- **Cost Optimization:** Optimizing the costs associated with using AWS services.
+- **Centralized Monitoring:** Managing and tracking resource usage from a central location.
+- **Pay-as-you-go:** A billing model based on actual resource consumption.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+#### Kiro – AI-powered Development Environment
 
-#### Amazon Q Developer
+- **AI-powered IDE:** Exploring a software development environment integrated with artificial intelligence.
+- **Spec-driven Development:** Using specifications to guide the software development process.
+- **AI Coding Assistance:** Receiving support for writing code, analyzing it, and improving source code quality.
+- **Development Workflow:** Integrating AI into the software development lifecycle to boost productivity.
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+#### Key Takeaways
 
-### Key Takeaways
+#### Knowledge of Cloud Computing
 
-#### Design Mindset
+- Gaining a deeper understanding of AWS’s role in building, deploying, and operating cloud-based application systems.
+- Grasping the importance of IAM (Identity and Access Management) in managing identities and controlling access to resources.
+- Learning about the hybrid cloud model and how to ensure security when connecting systems external to AWS. - Recognize the importance of designing a secure, flexible, and scalable cloud infrastructure.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+#### Knowledge of Monitoring & Observability
 
-#### Technical Architecture
+- Understand the three key components of observability: metrics, logs, and traces.
+- Know how to use Amazon CloudWatch to monitor resources and track system activity.
+- Understand the role of distributed tracing in identifying the root causes of errors in applications that rely on multiple services.
+- Recognize the significance of monitoring in the operation of production systems.
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+#### Knowledge of AI & Software Development
 
-#### Modernization Strategy
+- Gain insight into the applications of generative AI within the software development process.
+- Understand the role of AI agents in automating various stages of the development lifecycle.
+- Explore the use of Amazon Bedrock for building AI-powered applications on AWS.
+- Learn how to utilize AI-assisted programming tools to boost productivity and reduce development time.
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+#### Mindset for Cloud Security & Cost Optimization
 
-### Applying to Work
+- Understand the importance of securing identities and access within a cloud environment.
+- Apply the principle of least privilege to restrict unnecessary access.
+- Recognize that the use of AWS resources must be accompanied by ongoing cost monitoring and control.
+- Understand that an effective cloud system must be not only stable but also secure and cost-efficient.
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+### Professional Application
+
+- **AWS Infrastructure:** Leveraging knowledge of EC2, S3, VPC, and IAM to build and manage cloud infrastructure.
+- **Cloud Security:** Implementing IAM roles and the principle of least privilege to enhance the security of AWS resources.
+- **Monitoring Systems:** Utilizing Amazon CloudWatch to track operational activity and detect errors during application runtime.
+- **Cost Optimization:** Monitoring resource usage and optimizing costs when deploying systems on AWS.
+- **AI Integration:** Exploring and experimenting with Amazon Bedrock to integrate AI features into applications.
+- **Development Workflow:** Investigating Kiro and AI-powered programming tools to improve software development efficiency.
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Participating in **“AWS Community Day Vietnam 2026”** provided an opportunity to gain a deeper understanding of the AWS ecosystem, stay updated on emerging technology trends, and learn from the practical experiences of the cloud expert community in Vietnam.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+Key takeaways and highlights included:
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+#### Learning from AWS Experts
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+- Gaining insights into cloud architecture, security, and real-world system deployment solutions.
+- Learning how experts leverage AWS to address complex technical challenges within enterprises.
+- Broadening perspectives on the evolution of cloud computing and generative AI.
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+#### Exploring New Technologies
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+- Examining security solutions such as IAM Roles Anywhere and identity management within hybrid cloud environments.
+- Discovering the use of Amazon CloudWatch and Datadog for system monitoring, observability, and troubleshooting.
+- Learning how to build AI agents and integrate AI into software development workflows.
+- Exploring modern development support tools, including Kiro and Amazon Bedrock. #### Networking and Exchange
 
-#### Some event photos
-*Add your event photos here*  
+- An opportunity to meet and engage with experts, developers, and like-minded individuals with a shared interest in technology.
+- Gain practical insights from professionals currently working in the fields of AWS and Cloud Computing.
+- Expand your professional network within the tech community and explore career development opportunities.
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+#### Key Takeaways
+
+- Security is a critical factor that must be prioritized from the very beginning—during the design and implementation phases of cloud systems.
+- Monitoring and observability are essential for ensuring system stability.
+- Integrating AI into software development can boost productivity and streamline workflows.
+- Cost optimization should be an ongoing practice throughout the entire lifecycle of using AWS services.
+- Continuous learning and staying updated with new technologies are vital for software engineers in a rapidly evolving tech landscape.
+
+
+> Overall, AWS Community Day Vietnam 2026 serves as an excellent platform to broaden your knowledge of Cloud Computing, AI, and modern AWS solutions. The insights gained from this event will provide a valuable foundation for your studies, internships, and future career development in Backend, Cloud Engineering, and DevOps.
