@@ -10,7 +10,7 @@ pre: " <b> 4. </b> "
 
 Trong quá trình thực tập, em đã tham gia 3 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
 
-### [Event 1](.1-Event1/)
+### [Event 1](4.1-Event1/)
 
 &emsp;**Tên sự kiện:** AWS Community Day Vietnam 2026
 
