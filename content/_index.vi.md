@@ -23,7 +23,7 @@ chapter: false
 
 &emsp; **Vị trí thực tập:** Chương trình huấn luyện nhân lực - Hành trình AI đám mây đầu tiên
 
-&emsp; **Thời gian thực tập:** Từ ngày 8/08/2026 đến ngày 15/11/2026
+&emsp; **Thời gian thực tập:** Từ ngày 8/08/2026 đến ngày 14/11/2026
 
 ![Ảnh đại diện của bạn](/Workshop/images/quang.png)
 
