@@ -29,6 +29,6 @@ This worklog summarizes my 12-week internship, spanning from August 8 to Novembe
 
 **Week 10:** [Learning and practicing the construction of CI/CD pipelines, including automated building and deployment of applications using AWS CodeCommit, CodeBuild, CodePipeline, and CodeDeploy.](1.10-week10/)
 
-**Week 11:** [Testing and] fixing errors](1.11-week11/)
+**Week 11:** [Testing and fixing errors](1.11-week11/)
 
 **Week 12:** [Finalizing the report](1.12-week12/)
