@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 
-Trong suốt thời gian thực tập tại **[Công ty TNHH Amazon Web Services Viet Nam] **08/08/2026 đến 15/11/2026 , tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế. Em đã tích cực tham gia đóng góp ý tưởng, phối hợp cùng các thành viên thực hiện các chức năng theo kế hoạch, qua đó từng bước nâng cao kỹ năng chuyên môn, kỹ năng làm việc nhóm và tiếp cận các ứng dụng dịch vụ của Amazon Web Services.  
+Trong suốt thời gian thực tập tại **[Công ty TNHH Amazon Web Services Viet Nam] **08/08/2026 đến 14/11/2026 , tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế. Em đã tích cực tham gia đóng góp ý tưởng, phối hợp cùng các thành viên thực hiện các chức năng theo kế hoạch, qua đó từng bước nâng cao kỹ năng chuyên môn, kỹ năng làm việc nhóm và tiếp cận các ứng dụng dịch vụ của Amazon Web Services.  
  
 
 Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.

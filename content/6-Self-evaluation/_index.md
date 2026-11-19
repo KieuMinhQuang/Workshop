@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 
-During my internship at **Amazon Web Services Vietnam Co., Ltd.** from August 8, 2026, to November 15, 2026, I had the opportunity to learn, develop, and apply the knowledge I had acquired within a real-world professional environment. I actively contributed ideas and collaborated with team members to implement various functions as planned; through this process, I progressively enhanced my professional expertise and teamwork skills, while gaining hands-on experience with Amazon Web Services applications and services.
+During my internship at **Amazon Web Services Vietnam Co., Ltd.** from August 8, 2026, to November 14, 2026, I had the opportunity to learn, develop, and apply the knowledge I had acquired within a real-world professional environment. I actively contributed ideas and collaborated with team members to implement various functions as planned; through this process, I progressively enhanced my professional expertise and teamwork skills, while gaining hands-on experience with Amazon Web Services applications and services.
  
 In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
 
