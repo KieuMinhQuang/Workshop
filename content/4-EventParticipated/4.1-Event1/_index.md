@@ -59,7 +59,7 @@ Relevant technical concepts:
 
 **Key Learning:** Understanding how AI-powered platforms can help organizations access information, analyze data, and improve operational efficiency.
 
-#### 2. Track 2B: Làn Sóng Chuyển Dịch Trong Thời Đại AI
+#### 2. Track 2B: The Wave of Shifts in the AI Era
 
 - **Time:** 10:10–10:30.
 - **Speaker:** Phan Tuấn Anh.
