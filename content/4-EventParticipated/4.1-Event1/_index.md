@@ -1,158 +1,313 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "AWS Community Day Vietnam 2026"
+date: 2026-11-22
 weight: 1
 chapter: false
-pre: " <b> 4.1. </b> "
+pre: "<b>4.1. </b>"
 ---
 
+# Event Report: AWS Community Day Vietnam 2026
 
-# “AWS Community Day Vietnam 2026” – Event Summary & Takeaways
+### General Event Information
+
+- **Event Name:** AWS Community Day Vietnam 2026
+- **Date & Time:** Saturday, November 21, 2026, 08:30–16:35
+- **Location:** Hall A1, Hanoi University, Km9 Nguyen Trai Street, Dai Mo Ward, Hanoi, Vietnam
+- **Organizer:** AWS Vietnam Community
+- **Role:** Attendee
+- **Website:** [AWS Community Day Vietnam 2026](https://awscommunitydayvn.com/)
 
 ### Event Objectives
 
-- To share knowledge and practical experience regarding Amazon Web Services (AWS) within the field of Cloud Computing.
-- To provide updates on emerging technology trends, with a focus on Generative AI and its applications in software development.
-- To introduce solutions for security, monitoring, and cost optimization when deploying systems on AWS.
-- To exchange best practices for the design, deployment, and operation of cloud infrastructure.
-- To foster connections among students, developers, cloud engineers, and professionals within the AWS Vietnam community.
+- Share practical knowledge and experiences in designing, deploying, and operating applications on Amazon Web Services (AWS).
+- Explore emerging trends in Artificial Intelligence (AI), AI Agents, and AI-assisted software development.
+- Understand workload identity security across hybrid and multi-cloud environments.
+- Learn about application observability, performance monitoring, and troubleshooting.
+- Explore AWS cost optimization and resource management strategies.
+- Connect with Cloud Engineers, DevOps professionals, developers, and technology experts.
 
 ### List of Speakers
 
-### List of Speakers
+Speakers from the eight Tech Talk sessions attended:
 
-1. **Hồ Việt Anh** – AWS Community Hero
-2. **Phóng Phạm** – FCAJ Program Admin
-3. **Tâm Nguyễn** – Head of Cloud Department, Cloudino
-4. **Nam Lã** – AWS Community Leader
-5. **Trần Đại Đồng** – CTO, Cloudino
-6. **Phan Tuấn Anh** – CIO, Cloudino
-7. **Kha Văn** – AWS Community Builder
-8. **Yến Trịnh** – AWS Community Builder
-9. **Dũng Lương** – AWS Student Builder
-10. **Tuấn Vũ** – AWS Community Builder
-11. **Đức Thắng** – Head of Innovation, Twendee
-12. **Quân Phạm** – AI Engineer, Cloudino
-13. **Quân Nguyễn** – AI Engineer, AWSVNUG
-14. **Hạnh Phạm** – AWS Community Builder
+- **Nam Lã and Quân Nguyễn** – Amazon Quick Deep Dive.
+- **Phan Tuấn Anh** – Làn sóng chuyển dịch trong thời đại AI.
+- **Kha Văn and Yến Trịnh** – Securing Workload Identity Across Hybrid and Multi-Cloud with AWS IAM Roles Anywhere.
+- **Dũng Lương** – Observability on AWS: Understanding Your Application.
+- **Tuấn Vũ** – Datadog – Observability with AWS.
+- **Đức Thắng** – From AI Demo to Production: Building Enterprise AI Agents on AWS.
+- **Quân Phạm and Tâm Nguyễn** – Kiro – under the hood.
+- **Hạnh Phạm** – Optimize Cost and Adoption of Amazon Quick with Centralized Monitoring.
 
 ### Key Highlights
 
-#### Artificial Intelligence (AI) & Agentic Software Development
+#### 1. Track 1: Amazon Quick Deep Dive
 
-- **AI-powered development:** The application of artificial intelligence to support the software development process. - **Agentic Software Development:** Utilizing AI agents to assist with requirements analysis, planning, coding, and testing.
-- **Amazon Bedrock:** Exploring a platform for building Generative AI applications and AI agents on AWS.
-- **Enterprise AI Agents:** Discovering how to transition AI agents from the experimental phase to a production environment.
-- **AI-assisted coding:** Applying AI tools to enhance productivity and software development quality.
+- **Time:** 09:25–09:50.
+- **Speakers:** Nam Lã and Quân Nguyễn.
+- **Category:** Artificial Intelligence (AI).
 
-#### AWS Security – IAM Roles Anywhere
+This session focused on Amazon Quick, an AI-powered workspace designed to support enterprise information retrieval, data analysis, research, and workflow automation.
 
-- **Identity and Access Management (IAM):** Managing identities, access permissions, and resource authorization on AWS.
-- **IAM Roles Anywhere:** Enabling workloads outside of AWS to use IAM roles for accessing AWS resources via digital certificates.
-- **Hybrid Cloud Security:** Ensuring security when connecting on-premises systems with the AWS environment.
-- **Authentication & Authorization:** Distinguishing between identity verification and the granting of access permissions.
-- **Security Best Practices:** Minimizing the use of long-term access keys and applying the principle of least privilege.
+Relevant technical concepts:
 
-#### Observability on AWS
+- **AI-powered Workspace:** Integrating AI capabilities into business workflows to improve productivity.
+- **Enterprise Search:** Searching for information across connected organizational data sources.
+- **AI Research:** Using AI to research, summarize, and analyze information.
+- **Business Intelligence:** Transforming business data into useful insights and reports.
+- **AI Agents:** Exploring intelligent agents that can support task execution and automation.
 
-- **Observability:** The ability to monitor and evaluate the operational state of a system through operational data.
-- **Metrics:** Collecting indicators such as CPU utilization, memory usage, request counts, and response times.
-- **Logs:** Recording operational information, errors, and events occurring within an application.
-- **Distributed Tracing:** Tracking the processing of requests across multiple services.
-- **Amazon CloudWatch:** Monitoring AWS resources, collecting logs and metrics, and configuring alerts.
-- **AWS X-Ray:** Assisting in the analysis and tracing of requests within distributed applications.
+**Key Learning:** Understanding how AI-powered platforms can help organizations access information, analyze data, and improve operational efficiency.
 
-#### Datadog – Observability with AWS
+#### 2. Track 2B: Làn Sóng Chuyển Dịch Trong Thời Đại AI
 
-- **Infrastructure Monitoring:** Tracking the operational health of cloud infrastructure.
-- **Application Performance Monitoring (APM):** Monitoring application performance and response times.
-- **Centralized Monitoring:** Consolidating monitoring data from various system components.
-- **Incident Detection:** Identifying anomalies and supporting incident resolution.
-- **CloudWatch vs. Datadog:** Understanding the differences between AWS’s native monitoring tool and a third-party monitoring platform.
+- **Time:** 10:10–10:30.
+- **Speaker:** Phan Tuấn Anh.
+- **Category:** Artificial Intelligence (AI).
 
-#### Cloud Computing & Cost Optimization
+This session addressed technological transformation in the AI era and the growing influence of artificial intelligence on software development and professional workflows.
 
-- **AWS Infrastructure:** Understanding how cloud services are utilized to build and operate systems.
-- **Resource Monitoring:** Tracking resource usage to prevent waste.
-- **Cost Optimization:** Optimizing the costs associated with using AWS services.
-- **Centralized Monitoring:** Managing and tracking resource usage from a central location.
-- **Pay-as-you-go:** A billing model based on actual resource consumption.
+Relevant topics:
 
-#### Kiro – AI-powered Development Environment
+- **AI Transformation:** How AI adoption changes organizational workflows and business processes.
+- **AI-assisted Development:** Using AI tools to support software development and problem-solving.
+- **Automation:** Reducing repetitive manual tasks through intelligent automation.
+- **Human-AI Collaboration:** Combining AI capabilities with human judgment and technical expertise.
+- **Continuous Learning:** Adapting technical skills to emerging technologies.
 
-- **AI-powered IDE:** Exploring a software development environment integrated with artificial intelligence.
-- **Spec-driven Development:** Using specifications to guide the software development process.
-- **AI Coding Assistance:** Receiving support for writing code, analyzing it, and improving source code quality.
-- **Development Workflow:** Integrating AI into the software development lifecycle to boost productivity.
+**Key Learning:** AI can improve productivity, but developers must continue developing fundamental technical knowledge and critical thinking skills.
 
-#### Key Takeaways
+#### 3. Track 3: Securing Workload Identity Across Hybrid and Multi-Cloud with AWS IAM Roles Anywhere
 
-#### Knowledge of Cloud Computing
+- **Time:** 10:50–11:20.
+- **Speakers:** Kha Văn and Yến Trịnh.
+- **Category:** Security.
 
-- Gaining a deeper understanding of AWS’s role in building, deploying, and operating cloud-based application systems.
-- Grasping the importance of IAM (Identity and Access Management) in managing identities and controlling access to resources.
-- Learning about the hybrid cloud model and how to ensure security when connecting systems external to AWS. - Recognize the importance of designing a secure, flexible, and scalable cloud infrastructure.
+This session focused on securing workload identities across hybrid and multi-cloud environments through AWS IAM Roles Anywhere.
 
-#### Knowledge of Monitoring & Observability
+Relevant technical concepts:
 
-- Understand the three key components of observability: metrics, logs, and traces.
-- Know how to use Amazon CloudWatch to monitor resources and track system activity.
-- Understand the role of distributed tracing in identifying the root causes of errors in applications that rely on multiple services.
-- Recognize the significance of monitoring in the operation of production systems.
+- **Workload Identity:** Managing the identities used by applications and services to access cloud resources.
+- **Hybrid Cloud:** Combining on-premises infrastructure with cloud services.
+- **Multi-Cloud:** Operating applications across multiple cloud providers.
+- **AWS IAM Roles Anywhere:** Enabling workloads outside AWS to obtain temporary AWS credentials using X.509 certificates and configured trust relationships.
+- **Temporary Credentials:** Reducing reliance on long-term access keys.
+- **Least Privilege:** Granting only the permissions required by each workload.
 
-#### Knowledge of AI & Software Development
+**Key Learning:** Temporary credentials and carefully managed workload identities can improve security across distributed infrastructure environments.
 
-- Gain insight into the applications of generative AI within the software development process.
-- Understand the role of AI agents in automating various stages of the development lifecycle.
-- Explore the use of Amazon Bedrock for building AI-powered applications on AWS.
-- Learn how to utilize AI-assisted programming tools to boost productivity and reduce development time.
+#### 4. Track 4: Observability on AWS: Understanding Your Application
 
-#### Mindset for Cloud Security & Cost Optimization
+- **Time:** 11:20–11:50.
+- **Speaker:** Dũng Lương.
+- **Category:** Observability.
 
-- Understand the importance of securing identities and access within a cloud environment.
-- Apply the principle of least privilege to restrict unnecessary access.
-- Recognize that the use of AWS resources must be accompanied by ongoing cost monitoring and control.
-- Understand that an effective cloud system must be not only stable but also secure and cost-efficient.
+This session focused on understanding application behavior and operational conditions through observability on AWS.
 
-### Professional Application
+Relevant technical concepts:
 
-- **AWS Infrastructure:** Leveraging knowledge of EC2, S3, VPC, and IAM to build and manage cloud infrastructure.
-- **Cloud Security:** Implementing IAM roles and the principle of least privilege to enhance the security of AWS resources.
-- **Monitoring Systems:** Utilizing Amazon CloudWatch to track operational activity and detect errors during application runtime.
-- **Cost Optimization:** Monitoring resource usage and optimizing costs when deploying systems on AWS.
-- **AI Integration:** Exploring and experimenting with Amazon Bedrock to integrate AI features into applications.
-- **Development Workflow:** Investigating Kiro and AI-powered programming tools to improve software development efficiency.
+- **Metrics:** Monitoring measurable system indicators such as CPU utilization, memory usage, and response time.
+- **Logs:** Collecting application events, errors, and diagnostic information.
+- **Traces:** Tracking requests across application components.
+- **Amazon CloudWatch:** Collecting operational metrics, managing logs, visualizing information, and configuring alarms.
+- **Monitoring & Alerting:** Detecting unusual system behavior and notifying administrators.
+- **Troubleshooting:** Investigating application issues using operational data.
+
+**Key Learning:** Successful application deployment must be followed by monitoring and observability to support stable operations.
+
+#### 5. Track 5: Datadog – Observability with AWS
+
+- **Time:** 13:30–14:00.
+- **Speaker:** Tuấn Vũ.
+- **Category:** Observability.
+
+This session introduced the topic of monitoring AWS infrastructure and applications using Datadog.
+
+Relevant technical concepts:
+
+- **Infrastructure Monitoring:** Observing the condition and performance of cloud resources.
+- **Application Performance Monitoring (APM):** Tracking application response times, errors, and performance.
+- **Log Management:** Collecting and analyzing application logs.
+- **Dashboards:** Visualizing operational data in a centralized interface.
+- **AWS Integration:** Integrating supported AWS services with Datadog.
+- **Alerting:** Detecting and reporting operational issues.
+
+**Key Learning:** Centralized observability platforms can simplify monitoring and troubleshooting across multiple applications and infrastructure components.
+
+#### 6. Track 6: From AI Demo to Production: Building Enterprise AI Agents on AWS
+
+- **Time:** 14:30–15:00.
+- **Speaker:** Đức Thắng.
+- **Category:** Artificial Intelligence (AI).
+
+This session focused on transitioning AI applications from demonstrations to enterprise production environments.
+
+Relevant technical concepts:
+
+- **AI Agents:** Intelligent systems capable of using AI models and authorized tools to perform tasks.
+- **Proof of Concept (PoC):** Validating the technical feasibility of a proposed solution.
+- **Production Readiness:** Preparing applications for reliable real-world operations.
+- **Security & Access Control:** Protecting data and controlling AI Agent permissions.
+- **Scalability:** Supporting increasing workloads and user requests.
+- **Monitoring & Evaluation:** Measuring application behavior and output quality.
+- **Cost Management:** Monitoring the expenses associated with AI services and infrastructure.
+
+**Key Learning:** A successful AI demonstration requires additional work in security, reliability, monitoring, scalability, and cost management before production deployment.
+
+#### 7. Track 7: Kiro – Under the Hood
+
+- **Time:** 15:15–15:45.
+- **Speakers:** Quân Phạm and Tâm Nguyễn.
+- **Category:** Artificial Intelligence (AI).
+
+This session introduced Kiro, an AI-powered development environment that supports structured software development workflows.
+
+Relevant technical concepts:
+
+- **Agentic Development:** Using AI Agents to assist with development tasks.
+- **Spec-driven Development:** Organizing software development around requirements, design specifications, and implementation tasks.
+- **Requirements:** Defining expected application behavior before implementation.
+- **Design:** Planning technical approaches and application architecture.
+- **Task Planning:** Breaking development work into manageable tasks.
+- **AI-assisted Coding:** Supporting code generation, explanation, and development activities.
+
+**Key Learning:** Specification-driven workflows can help developers maintain clearer requirements and better control over AI-assisted development.
+
+#### 8. Track 8: Optimize Cost and Adoption of Amazon Quick with Centralized Monitoring
+
+- **Time:** 15:45–16:15.
+- **Speaker:** Hạnh Phạm.
+- **Category:** Artificial Intelligence (AI) & Cost Optimization.
+
+This session focused on the cost optimization and adoption of Amazon Quick using centralized monitoring.
+
+Relevant technical concepts:
+
+- **Cost Optimization:** Evaluating and controlling AI service expenses.
+- **Centralized Monitoring:** Consolidating operational information for easier management.
+- **Usage Tracking:** Monitoring the utilization of AI capabilities.
+- **Resource Management:** Allocating resources according to actual organizational needs.
+- **Cost Visibility:** Understanding service consumption and associated costs.
+- **AI Adoption:** Evaluating the adoption and effectiveness of AI tools.
+
+**Key Learning:** Successful AI adoption requires not only useful capabilities but also appropriate monitoring and cost management.
+
+### Knowledge and Skills Gained
+
+#### 1. Artificial Intelligence
+
+- **Amazon Quick:** Understanding AI-powered enterprise search, data analysis, and workflow automation.
+- **AI Agents:** Exploring how intelligent agents can support multi-step tasks.
+- **AI Production:** Recognizing production requirements involving reliability, security, monitoring, and cost.
+- **AI-assisted Development:** Learning about the potential of tools such as Kiro in structured software development.
+- **AI Transformation:** Understanding how AI is changing development practices and professional skill requirements.
+
+#### 2. AWS Security
+
+- **AWS IAM:** Understanding the importance of identity and access management.
+- **AWS IAM Roles Anywhere:** Exploring temporary credential access for workloads outside AWS.
+- **Temporary Credentials:** Recognizing the benefits of reducing long-term access key usage.
+- **Least Privilege:** Granting only the permissions required for specific operations.
+- **Hybrid and Multi-Cloud Security:** Understanding identity security across different infrastructure environments.
+
+#### 3. Observability and Monitoring
+
+- **Metrics, Logs, and Traces:** Understanding the three essential sources of observability data.
+- **Amazon CloudWatch:** Exploring AWS monitoring, log management, and alerting capabilities.
+- **Datadog:** Learning about an additional platform for infrastructure and application observability.
+- **Alerting:** Recognizing the value of automated operational notifications.
+- **Troubleshooting:** Understanding how monitoring data supports root-cause analysis.
+
+#### 4. Cost Optimization
+
+- **Cost Visibility:** Identifying the resources and services responsible for cloud expenses.
+- **Resource Optimization:** Selecting configurations according to workload requirements.
+- **Usage Monitoring:** Monitoring resource consumption and identifying inefficient usage.
+- **AI Cost Management:** Recognizing the importance of cost control in AI applications.
+- **Centralized Monitoring:** Understanding how centralized operational information supports cost management.
+
+### Applications to My Internship Project
+
+The knowledge associated with these sessions can be applied to **TechVina**, a phone store application deployed on AWS.
+
+#### 1. Improving AWS Security
+
+- **AWS IAM:** Review IAM Roles and permissions used by the application infrastructure.
+- **GitHub OIDC:** Continue using temporary AWS credentials for GitHub Actions deployments instead of long-term access keys.
+- **Amazon Cognito:** Maintain secure user authentication and identity management.
+- **Amazon RDS MySQL:** Review database access permissions and secure connection configurations.
+
+#### 2. Monitoring Backend and Infrastructure
+
+- **Amazon CloudWatch:** Monitor EC2 and supported AWS resource metrics.
+- **CloudWatch Logs:** Consider collecting Spring Boot application logs for centralized troubleshooting.
+- **CloudWatch Alarms:** Configure alerts for important infrastructure indicators.
+- **Application Monitoring:** Improve monitoring of API response times, errors, and backend performance.
+- **Datadog:** Evaluate additional monitoring solutions if the application's scale and operational requirements increase.
+
+#### 3. Optimizing AWS Costs
+
+- Monitor the operating expenses of Amazon EC2, Amazon RDS, Amazon S3, and Amazon CloudFront.
+- Review infrastructure utilization and choose configurations appropriate for the project.
+- Use AWS cost management tools to monitor expenses and budgets.
+- Avoid maintaining unnecessary cloud resources.
+
+#### 4. Improving Development and CI/CD
+
+- **GitHub Actions:** Continue automating Backend and Frontend builds and deployments.
+- **AWS Systems Manager:** Use remote management capabilities to support Backend deployments to EC2.
+- **Kiro:** Explore specification-driven development for future application features.
+- **AI-assisted Coding:** Evaluate AI tools for code explanation, documentation, and debugging.
+- **Deployment Monitoring:** Improve application health checks and log analysis after deployments.
+
+#### 5. Exploring AI Integration
+
+- Research AI-assisted search and data analysis features.
+- Explore intelligent reporting based on product, order, and revenue data.
+- Evaluate security, access control, and operational costs before implementing AI features.
+- Understand the requirements for moving AI prototypes into reliable production applications.
 
 ### Event Experience
 
-Participating in **“AWS Community Day Vietnam 2026”** provided an opportunity to gain a deeper understanding of the AWS ecosystem, stay updated on emerging technology trends, and learn from the practical experiences of the cloud expert community in Vietnam.
+Participating in **AWS Community Day Vietnam 2026** was a valuable learning experience that helped me broaden my understanding of cloud computing, artificial intelligence, and modern application operations.
 
-Key takeaways and highlights included:
+#### 1. Exploring Emerging Technologies
 
-#### Learning from AWS Experts
+- Attended eight Tech Talk sessions covering AI, Security, Observability, and Cost Optimization.
+- Became familiar with technologies and tools such as Amazon Quick, AWS IAM Roles Anywhere, Amazon CloudWatch, Datadog, and Kiro.
+- Developed a broader perspective on the technical challenges involved in deploying and operating AWS applications.
 
-- Gaining insights into cloud architecture, security, and real-world system deployment solutions.
-- Learning how experts leverage AWS to address complex technical challenges within enterprises.
-- Broadening perspectives on the evolution of cloud computing and generative AI.
+#### 2. Understanding Cloud Security and Operations
 
-#### Exploring New Technologies
+- Recognized the importance of identity management and access control.
+- Learned about the role of application observability after deployment.
+- Explored approaches to operational monitoring, troubleshooting, and performance analysis.
 
-- Examining security solutions such as IAM Roles Anywhere and identity management within hybrid cloud environments.
-- Discovering the use of Amazon CloudWatch and Datadog for system monitoring, observability, and troubleshooting.
-- Learning how to build AI agents and integrate AI into software development workflows.
-- Exploring modern development support tools, including Kiro and Amazon Bedrock. #### Networking and Exchange
+#### 3. Learning About AI-assisted Development
 
-- An opportunity to meet and engage with experts, developers, and like-minded individuals with a shared interest in technology.
-- Gain practical insights from professionals currently working in the fields of AWS and Cloud Computing.
-- Expand your professional network within the tech community and explore career development opportunities.
+- Explored how AI can support information retrieval, data analysis, and software development.
+- Learned about AI Agents and the requirements for production-ready AI applications.
+- Recognized the importance of requirements, design, and testing in AI-assisted development workflows.
 
-#### Key Takeaways
+#### 4. Connecting with the AWS Community
 
-- Security is a critical factor that must be prioritized from the very beginning—during the design and implementation phases of cloud systems.
-- Monitoring and observability are essential for ensuring system stability.
-- Integrating AI into software development can boost productivity and streamline workflows.
-- Cost optimization should be an ongoing practice throughout the entire lifecycle of using AWS services.
-- Continuous learning and staying updated with new technologies are vital for software engineers in a rapidly evolving tech landscape.
+- Participated in an environment dedicated to sharing AWS knowledge and practical experience.
+- Gained broader awareness of career paths involving Cloud Computing, DevOps, Security, and AI.
+- Became more motivated to continue studying AWS and developing practical cloud engineering skills.
 
+### Lessons Learned
 
-> Overall, AWS Community Day Vietnam 2026 serves as an excellent platform to broaden your knowledge of Cloud Computing, AI, and modern AWS solutions. The insights gained from this event will provide a valuable foundation for your studies, internships, and future career development in Backend, Cloud Engineering, and DevOps.
+- **Security is essential:** Proper identity management and access control help reduce infrastructure security risks.
+- **Observability supports reliable operations:** Deploying an application is only the beginning; metrics, logs, and operational monitoring are also necessary.
+- **AI should solve practical problems:** AI solutions should be evaluated based on usefulness, reliability, security, and operating costs.
+- **Cloud costs require continuous monitoring:** Resources must be selected according to actual application requirements.
+- **AI complements technical knowledge:** Developers still need fundamental programming and system design skills to evaluate AI-generated results.
+- **Hands-on experience matters:** Technical concepts become more valuable when explored through real-world cloud development projects.
+
+### Event Photos
+
+![AWS Community Day Vietnam 2026](/Workshop/images/4-EventParticipated/1795446547559_2020079097636604857_g8787398237598733634_4c47b959eba23a3a593f475ece15830a.jpg)
+![AWS Community Day Vietnam 2026](/Workshop/images/4-EventParticipated/1795446567099_2020079097636604857_g8787398237598733634_c70a937be79303c593f918737b29edea.jpg)
+![AWS Community Day Vietnam 2026](/Workshop/images/4-EventParticipated/1795446569988_2020079097636604857_g8787398237598733634_493fe013e8e51db98b2ba585ec5ac0ec.jpg)
+
+> Overall, AWS Community Day Vietnam 2026 provided valuable insights into emerging technologies, cloud security, application observability, and cost optimization. The knowledge gained from the event will support my continued learning, future improvements to the TechVina project, and professional development in Cloud Computing, DevOps, and AI.
